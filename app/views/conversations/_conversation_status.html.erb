@@ -1,0 +1,12 @@
+<% if conversation.status == "open" %>
+  <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
+<% else %>
+  <div class="alert alert-warning">
+    <p>El Doctor cerró esta conversación.</p>
+    <p class="p-b-3">Si quieres hacer una nueva consulta a uno de nuestros doctores empieza una nueva conversación.</p>
+    <p></p>
+    <strong><%= link_to "Regresar", root_path, class: "btn btn-success" %></strong>
+    <text>   </text>
+    <strong><%= link_to "Empieza una nueva conversación", conversations_path, method: 'post', class: "btn btn-danger" %></strong>
+  </div>
+<% end %>

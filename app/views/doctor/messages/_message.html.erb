@@ -1,0 +1,6 @@
+<% if message.user.class == Doctor %>
+  <p><strong>Dr. <%=@conversation.doctor.doctor_profile.last_name%>:</strong> <%=message.content%></p>
+<% else %>
+  <p><strong><%=@conversation.patient.patient_profile.first_name %>:</strong> <%=message.content%></p>
+<% end %>
+

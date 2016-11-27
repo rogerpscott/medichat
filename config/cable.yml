@@ -1,0 +1,10 @@
+production:
+  adapter: redis
+  url: redis://redistogo:7dc212d6e260940046f4116ae211b891@viperfish.redistogo.com:10115/
+
+
+development:
+  adapter: async
+
+test:
+  adapter: async

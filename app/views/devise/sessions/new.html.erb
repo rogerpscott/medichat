@@ -1,0 +1,384 @@
+
+  <section id="top" class="home" data-parallax="scroll">
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8 home__title">
+      <div class="home__text-wrap">
+        <!-- Title -->
+        <h1>Somos MediChat: Orientación Médica Online</h1>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <div id="background-form" class="col-md-8 col-xs-12 col-md-offset-2">
+        <h2>Inicia sesión</h2>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, label: :Correo, required: false, autofocus: true, html: { class: 'col-md-6' }%>
+            <%= f.input :password, label: :Contraseña, required: false, html: { class: 'col-md-6' } %>
+            <%= f.input :remember_me, label: :Recuérdame, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Inicia sesión" %>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+    </section>
+
+  <!-- Services Section -->
+  <section class="section-padding-70 white-bg border-bottom">
+    <div class="container">
+      <div class="row">
+        <!-- Service card -->
+        <div class="col-xs-12 col-sm-4">
+          <div class="service-card">
+            <a href="#sobre-medichat">
+              <span class="icon"><i class="fa fa-heartbeat"></i></span>
+              <h2>Sobre Medichat</h2>
+              <h6>Evolución médica a través de la tecnología</h6>
+              <p>Te brindamos la posibilidad de conversar con nuestro staff médico de calidad en tiempo real y recibir orientación médica vía online 24/7.</p>
+            </a>
+          </div>
+        </div>
+        <!-- End Service card -->
+
+        <!-- Service card -->
+        <div class="col-xs-12 col-sm-4">
+          <div class="service-card">
+            <a href="#como-funciona" class="chat-button">
+              <span class="icon"><i class="fa fa-question-circle"></i></span>
+              <h2>Cómo Funciona</h2>
+              <h6><span>24/7</span>online</h6>
+              <p>Es muy sencillo y rápido, en 4 pasos recibe orientación de un Doctor.</p>
+            </a>
+          </div>
+        </div>
+        <!-- End Service card -->
+
+        <!-- Service card -->
+        <div class="col-xs-12 col-sm-4">
+          <div class="service-card">
+            <a href="#ventajas">
+              <span class="icon"><i class="fa fa-medkit"></i></span>
+              <h2>Ventajas de Medichat</h2>
+              <h6>la orientación médica de tus sueños</h6>
+              <p>Comienza a disfrutar la experiencia MediChat, para chatear con un doctor necesitas registrarte.</p>
+            </a>
+          </div>
+        </div>
+        <!-- End Service card -->
+      </div>
+    </div>
+  </section>
+  <!-- End Services Section -->
+
+  <!-- Articles Section -->
+  <section class="section-padding-100 border-bottom">
+    <div class="container">
+      <div class="row">
+
+        <!-- Section title -->
+        <div class="col-xs-12">
+          <div id="sobre-medichat" class="section-title">
+            <h2>Sobre Medichat</h2>
+            <p>Evolución médica a través de la tecnología</p>
+          </div>
+        </div>
+        <!-- End Section title -->
+
+        <!-- Article card -->
+        <div class="col-xs-12 col-md-8 col-lg-6">
+          <div class="card article-card">
+            <div class="card-wrap">
+              <!-- Background card -->
+              <img src="img/articles/article1.jpg" alt="">
+              <!-- End Background card -->
+              <!-- Article category -->
+              <span class="category category--purple">Nuevo</span>
+              <!-- End Article category -->
+              <h3>Una Revolución</h3>
+              <p>Con MediChat ampliamos la oferta médica en el país mediante la tecnología: MediChat es una plataforma médica que conecta pacientes con doctores en tiempo real, y nace para cubrir la creciente demanda médica en internet. Hoy en día, muchas personas buscan información en línea y se automedican, generando riesgos importantes para su salud. Por esa razón creamos MediChat: Para revolucionar la forma como recibes orientación médica y lograr un impacto positivo en nuestra sociedad, ya que nuestra visión es llevar bienestar en cada país donde operamos.</p>
+              <!-- Statistic -->
+
+              <!-- End Statistic -->
+            </div>
+          </div>
+        </div>
+        <!-- End Article card -->
+
+        <!-- Article card (white background) -->
+        <div class="col-xs-12 col-md-4 col-lg-3">
+          <div class="card article-card article-card--white">
+            <div class="card-wrap">
+              <!-- Article category -->
+              <span class="category category--orange">Práctico</span>
+              <!-- End Article category -->
+              <h3>Usálo donde quieres</h3>
+              <p>No importa si te encuentras en tu casa, en tu oficina, a mitad de la noche, o incluso si te encuentras de viaje, usa MediChat para encontrar orientación médica online en el momento y lugar que lo necesites.</p>
+              <!-- Statistic -->
+              <!-- End Statistic -->
+            </div>
+          </div>
+        </div>
+        <!-- End Article card (white background) -->
+
+        <!-- Article card (white background) -->
+        <div class="col-xs-12 col-md-4 col-lg-3">
+          <div class="card article-card article-card--white">
+            <div class="card-wrap">
+              <!-- Article category -->
+              <span class="category category--indigo">Seguro</span>
+              <!-- End Article category -->
+              <h3>Lo más seguro para ti</h3>
+              <p>En MediChat podrás encontrar orientación médica online con sólo un clic las 24 horas del día, 7 días a la semana, de manera amigable y segura. Nuestra intención es brindar un servicio de mensajería de confianza, donde te sientas cómodo de hacer consultas a un doctor en tiempo real.</p>
+              <!-- Statistic -->
+              <!-- End Statistic -->
+            </div>
+          </div>
+        </div>
+        <!-- End Article card (white background) -->
+
+        <!-- Article card (white background) -->
+        <div class="col-xs-12 col-md-8 col-lg-3">
+          <div class="card article-card article-card--white">
+            <div class="card-wrap">
+              <!-- Article category -->
+              <span class="category category--indigo">Seguro</span>
+              <!-- End Article category -->
+              <h3>Te cuidamos</h3>
+              <p>En MediChat podrás encontrar orientación médica online, con sólo un clic, las 24 horas del día y los 7 días a la semana. Nuestros doctores absolverán tus dudas en tiempo real, mediante una interfaz amigable y segura para tu comodidad.</p>
+              <!-- Statistic -->
+              <!-- End Statistic -->
+            </div>
+          </div>
+        </div>
+        <!-- End Article card (white background) -->
+
+        <!-- Article card -->
+        <div class="col-xs-12 col-md-8 col-lg-6">
+          <div class="card article-card">
+            <div class="card-wrap">
+              <!-- Background card -->
+              <img src="img/articles/article2.jpg" alt="">
+              <!-- End Background card -->
+              <!-- Article category -->
+              <span class="category category--orange">Category</span>
+              <!-- End Article category -->
+              <h3>Listo para comenzar</h3>
+              <p>Obtén un consejo médico especializado en MediChat, empieza ahora: CHATEA CON UN DOCTOR.</p>
+              <!-- Statistic -->
+              <!-- End Statistic -->
+            </div>
+          </div>
+        </div>
+        <!-- End Article card -->
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- End Articles Section -->
+  <section class="section-padding-100 white-bg">
+    <div class="container">
+      <div class="row">
+
+        <!-- Section title -->
+        <div class="col-xs-12">
+          <div id="como-funciona" class="section-title">
+            <h2>Cómo Funciona</h2>
+            <p>Es muy sencillo y rápido, en 4 pasos recibe orientación de un Doctor</p>
+          </div>
+        </div>
+        <!-- End Section title -->
+
+        <!-- Testimonial card -->
+        <div class="col-xs-12 col-md-3">
+          <div class="card card--no-shadow testimonial-card">
+            <span class="icon"><i class="fa fa-keyboard-o"></i></span>
+            <h4>Ingresa tus datos</h4>
+            <span>Paso 1</span>
+            <p>Queremos conocerte, para eso responde algunas preguntas.</p>
+          </div>
+        </div>
+        <!-- End Testimonial card -->
+
+        <!-- Testimonial card -->
+        <div class="col-xs-12 col-md-3">
+          <div class="card card--no-shadow testimonial-card">
+            <span class="icon"><i class="fa fa-laptop"></i></span>
+            <h4>Inicia la conversación</h4>
+            <span>Paso 2</span>
+            <p>Chatea con un Doctor dando click en el botón: CHATEA CON UN DOCTOR</p>
+          </div>
+        </div>
+        <!-- End Testimonial card -->
+
+        <!-- Testimonial card -->
+        <div class="col-xs-12 col-md-3">
+          <div class="card card--no-shadow testimonial-card">
+            <span class="icon"><i class="fa fa-stethoscope"></i></span>
+            <h4>Describe tus síntomas</h4>
+            <span>Paso 3</span>
+            <p>¿En qué podemos ayudarte? Cuéntanos de tus alergias, dolencias, medicamentos que estás tomando, etc.</p>
+          </div>
+        </div>
+        <!-- End Testimonial card -->
+
+         <!-- Testimonial card -->
+        <div class="col-xs-12 col-md-3">
+          <div class="card card--no-shadow testimonial-card">
+            <span class="icon"><i class="fa fa-medkit"></i></span>
+            <h4>Recibe orientación médica</h4>
+            <span>Paso 4</span>
+            <p>Resuelve tus consultas gracias a por un profesional de la salud. ¡Así de fácil!</p>
+          </div>
+        </div>
+        <!-- End Testimonial card -->
+
+      </div>
+    </div>
+  </section>
+  <!-- End Testimonials -->
+  <section class="section-padding-100 border-bottom">
+    <div class="container">
+      <div class="row">
+
+        <!-- Section title -->
+        <div class="col-xs-12">
+          <div id="ventajas" class="section-title">
+            <h2>Ventajas de MediChat<sub>s</sub></h2>
+            <p>Todo lo que ofrecemos</p>
+          </div>
+        </div>
+        <!-- End Section title -->
+
+        <!-- FAQ card -->
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Facilitamos el acceso a orientación médica oportuna, económica y de calidad: Recibe consejos profesionales de nuestro staff de médicos a tu disposición.</p>
+            <!-- End Text -->
+          </div>
+        </div>
+        <!-- End FAQ card -->
+
+        <!-- FAQ card -->
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Atendemos las 24 horas del día 7 días de la semana: Conectamos pacientes con doctores de calidad en tiempo real a través de la Internet. </p>
+            <!-- End Text -->
+          </div>
+        </div>
+        <!-- End FAQ card -->
+
+        <!-- FAQ card -->
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Te ahorramos tiempo: Te atendemos en 5 minutos aproximadamente. Además Para recibir orientación médica con MediChat no requieres cita previa ni tiempo de espera.</p>
+            <!-- End Text -->
+          </div>
+        </div>
+        <!-- End FAQ card -->
+
+        <!-- FAQ card -->
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Reducimos el costo de las orientaciones médicas.</p>
+            <!-- End Text -->
+          </div>
+        </div>
+        <!-- End FAQ card -->
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Evitamos la automedicación: Siguiendo las recomendaciones de nuestros doctores cuidas tu salud.</p>
+            <!-- End Text -->
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Somos una plataforma rápida y Confiable: Podrás comunicar tus síntomas al médico y obtener orientación inmediata.</p>
+            <!-- End Text -->
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Estamos al alcance de nuestros afiliados: Si tienes acceso a Internet, puedes chatear con uno de nuestros Doctores, en el momento que lo necesites y desde donde estés.</p>
+            <!-- End Text -->
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="card faq-card">
+            <!-- Title -->
+            <!-- End Title -->
+            <!-- Text -->
+            <p>Guardamos tu historia médica: Para que nuestros doctores puedan darte una mejor orientación cuando la necesites.</p>
+            <!-- End Text -->
+          </div>
+        </div>
+
+        <!-- View all -->
+        <!-- End View all -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <!-- Social links
+        <div class="col-xs-12 col-sm-6 col-sm-push-6">
+          <ul class="footer__social-list">
+            <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+            <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+            <li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
+            <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+          </ul>
+        </div>
+        End Social links -->
+
+        <!-- Copyright -->
+        <div class="col-xs-12 col-sm-6 col-sm-pull-6">
+          <div class="footer__copyright">
+            <p>Copyright © 2016 <a href="#">MediChat</a>. All Rights Reserved.</p>
+          </div>
+        </div>
+        <!-- End Copyright -->
+
+        <!-- Back to top -->
+        <button class="back-to-top"><a href="#top"><i class="fa fa-caret-up"></i></a></button>
+        <!-- End Back to top -->
+
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->

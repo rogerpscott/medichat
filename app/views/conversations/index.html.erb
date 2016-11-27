@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 patient-history">
+      <h3>Chats Anteriores</h3>
+      <% @conversations.each do |conversation| %>
+        <div>
+          <p>Fecha: <%= conversation.created_at.to_date %> Diagnóstico: <%= conversation.diagnosis %> </p>
+          <p>Resumen: <%= conversation.summary %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

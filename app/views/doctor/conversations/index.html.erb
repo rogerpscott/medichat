@@ -1,0 +1,31 @@
+<div class="container slightly-padded">
+  <div class="row">
+    <% if current_user.doctor_profile.available == false %>
+      <div class="col-md-12 text-center unavailable">
+        <p>Estas actualmente en modo 'No Disponible' entonces no puedes recibir chats. Para recibir chats cambia a modo Disponible</p>
+        <%= link_to 'Cambiar a Disponible', doctor_make_available_path, method: "post", class: 'btn btn-success'%>
+      </div>
+    <% else %>
+      <div class="col-md-12 text-center unavailable">
+        <p>Estas actualmente en modo 'Disponible'. Para dejar de recibir nuevos chats cambia a modo 'No Disponible'.</p>
+        <%= link_to 'Cambiar a No Disponible', doctor_make_unavailable_path, method: "post", class: 'btn btn-danger' %>
+      </div>
+    <% end %>
+
+    <div class="col-md-3 col-offset-md-2" id="conversations">
+      <h2>Pacientes</h2>
+      <div id="conversation-index">
+        <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, doctor_conversations_path, remote: true, id: "refresh" %>
+        <div class="list-group" id="tabs">
+          <%= render @conversations%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+setInterval(function () {document.getElementById("refresh").click();}, 10000);
+</script>
+
+

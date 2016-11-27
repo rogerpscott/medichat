@@ -1,0 +1,81 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <% if current_user.instance_of?(Doctor) %>
+    <%= link_to doctor_conversations_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo_medichat.png"%>
+    <% end %>
+  <% else %>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo_medichat.png" %>
+    <% end %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Different navigation if login or not -->
+    <nav class="desktop-navigation-wrap">
+        <ul class="desktop-navigation">
+          <% if user_signed_in? %>
+
+      <!-- Profile picture and dropdown -->
+          <% if current_user.class == Patient %>
+            <li class="navbar-wagon-item navbar-wagon-link"><%= link_to root_path do %>
+                 <%= t(".profile", default: "Início") %>
+              <% end %></li>
+              <li class="navbar-wagon-item navbar-wagon-link"><%= link_to edit_patient_profile_path(current_user.patient_profile) do %>
+                <%= t(".profile", default: "Perfil") %>
+              <% end %></li>
+              <li class="navbar-wagon-item navbar-wagon-link"><%= link_to conversations_path do %>
+                 <%= t(".profile", default: "Historial") %>
+              <% end %></li>
+          <% end %>
+          <li class="navbar-wagon-item navbar-wagon-link"><%= link_to log_out_well_path do %>
+             <%= t(".sign_out", default: "Log out") %>
+          <% end %></li>
+
+        <% else %>
+
+          <!-- Login text link -->
+          <li class="navbar-wagon-item navbar-wagon-link"><%= link_to new_user_session_path do %>
+          <%= t(".sign_in", default: "Login")%></li>
+          <% end %>
+
+        <% end %>
+      </ul>
+    </nav>
+
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <% if current_user.class == Patient %>
+              <li>
+                <%= link_to edit_patient_profile_path(current_user.patient_profile) do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Perfil") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to root_path do %>
+                  <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to conversations_path do %>
+                  <i class="fa fa-history"></i>  <%= t(".profile", default: "Historial") %>
+                <% end %>
+              </li>
+            <% end %>
+            <li>
+              <%= link_to log_out_well_path do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

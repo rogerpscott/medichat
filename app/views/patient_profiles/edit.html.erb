@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
+      <div id="background-form">
+        <h2>Cambiar mis datos</h2>
+
+        <%= simple_form_for @patient_profile do |f| %>
+        <div class="form-inputs row">
+            <%= f.input :first_name, label: :Nombre, required: false, autofocus: true %>
+            <%= f.input :last_name, label: :Apellido, required: false %>
+            <%= f.input :dni, label: :DNI, required: false %>
+            <%= f.input :phone, label: :Telefono, required: false %>
+            <%= f.input :age, label: :Edad, required: false %>
+            <%= f.input :sex, collection: PatientProfile::SEX, label: :Sexo, required: false %>
+            <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: :Tipo_de_sangre, required: false %>
+            <%= f.input :existing_conditions, label: :Enfermedades_preexistentes, required: false %>
+            <%= f.input :allergies, label: :Alergias, required: false %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Actualizar" %>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

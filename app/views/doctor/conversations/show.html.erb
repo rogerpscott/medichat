@@ -1,0 +1,31 @@
+
+
+<div class="row col-md-8 col-md-offset-2 tab-content" id="<%= @conversation.access_token %>">
+  <h1 class= "hidden"><%= @conversation.access_token %></h1>
+    <%= render partial: 'doctor/patient_profiles/show', locals: { conversation: @conversation, patient_profile: @conversation.patient.patient_profile}%>
+  <% if @conversation.patient.conversations.length > 1 %>
+    <div class="patient-history">
+      <h3>Historial del paciente</h3>
+      <% @conversation.patient.conversations.each do |conversation| %>
+        <div>
+          <p>Fecha: <%= conversation.created_at.to_date %> Diagnóstico: <%= conversation.diagnosis %> </p>
+          <p>Resumen: <%= conversation.summary %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="panel panel-default">
+    <% if @conversation.messages.any? %>
+      <div class="panel-body" id="messages">
+        <%= render partial: 'doctor/messages/message', collection: @conversation.messages%>
+      </div>
+    <%else%>
+      <div class="panel-body hidden" id="messages">
+      </div>
+    <%end%>
+  </div>
+  <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
+</div>
+
+<%= link_to "Terminar", edit_doctor_conversation_path, {class: "btn btn-danger"} %>
