@@ -17,6 +17,9 @@
     <div id="conversationbox">
       <%= render partial: 'conversation_status', locals: {message: @message, conversation: @conversation} %>
     </div>
+    <div>
+    <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
+    </div>
 </div>
 
 <script type="text/javascript">

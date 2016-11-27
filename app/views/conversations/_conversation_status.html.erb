@@ -1,6 +1,4 @@
-<% if conversation.status == "open" %>
-  <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
-<% else %>
+<% if conversation.status == "closed" %>
   <div class="alert alert-warning">
     <p>El Doctor cerró esta conversación.</p>
     <p class="p-b-3">Si quieres hacer una nueva consulta a uno de nuestros doctores empieza una nueva conversación.</p>
