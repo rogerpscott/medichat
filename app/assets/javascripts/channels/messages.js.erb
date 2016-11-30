@@ -1,27 +1,52 @@
-if ($('h1').text().length) {
-  var abc = $('h1').text();
+if ($('#kapor').text().length) {
+  var abc = $('#kapor').text();
   App.messages = App.cable.subscriptions.create({channel: 'MessagesChannel', access_token: abc}, {
     received: function(data) {
       $("#messages").not(".hidden #messages").removeClass('hidden')
       return $('#messages').not(".hidden #messages").append(this.renderMessage(data));
     },
     renderMessage: function(data) {
-        var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
-        var title = data.user + " mandó un mensaje";
-        var options = {
-          body: data.message,
-          tag: 'custom'
-        };
-        Notification.requestPermission(function() {
-          var notification = new Notification(title, options);
-
-          notificationEvents.forEach(function(eventName) {
-            notification[eventName] = function(event) {
-              console.log("recibiste notificación")
-            };
-          });
-        });
       return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
     }
   });
 }
+
+<% Conversation.all.each do |conversation| %>
+var pretoken = '<%= conversation.access_token %>';
+var token = "#" + pretoken.toString();
+  if ($(token).text().length) {
+    var abc = '<%= conversation.access_token %>';
+    App.messages = App.cable.subscriptions.create({channel: 'MessagesChannel', access_token: abc}, {
+      received: function(data) {
+        $("#messages").not(".hidden #messages").removeClass('hidden')
+        return $('#messages').not(".hidden #messages").append(this.renderMessage(data));
+      },
+      renderMessage: function(data) {
+          var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
+          var title = data.user + " mandó un mensaje";
+          var options = {
+            body: data.message,
+            tag: 'custom'
+          };
+          Notification.requestPermission(function() {
+            if (title.substring(0,3) == "Dr."){
+              console.log("ok");
+            } else {
+              var notification = new Notification(title, options);
+
+              notificationEvents.forEach(function(eventName) {
+                notification[eventName] = function(event) {
+                  console.log(data.message)
+                };
+              });
+              notification.onclick = function(event) {
+                event.preventDefault(); // prevent the browser from focusing the Notification's tab
+                window.open('/doctor/conversations/' + abc, '_blank');
+              }
+            }
+          });
+        return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
+      }
+    });
+  }
+<% end %>

@@ -1,7 +1,7 @@
 
 
 <div class="row col-md-8 col-md-offset-2 tab-content" id="<%= @conversation.access_token %>">
-  <h1 class= "hidden"><%= @conversation.access_token %></h1>
+  <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
     <%= render partial: 'doctor/patient_profiles/show', locals: { conversation: @conversation, patient_profile: @conversation.patient.patient_profile}%>
   <% if @conversation.patient.conversations.length > 1 %>
     <div class="patient-history">

@@ -1,5 +1,5 @@
 $(document).ready( function() {
-  if ($('h1').text().length) {
+  if ($('#kapor').text().length) {
     submitNewMessage();
   }
 });
