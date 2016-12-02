@@ -8,6 +8,38 @@ class Doctor::ConversationsController < ApplicationController
     end
   end
 
+  def index_new
+    all_conversations = Conversation.where(status: "open", doctor: current_user)
+    @conversations = []
+    all_conversations.each do |c|
+      has_doc_msg = c.messages.select { |m| m.user.class == Doctor }
+      if has_doc_msg.empty?
+        @conversations << c
+      end
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  helper_method :index_new
+
+  def index_old
+    all_conversations = Conversation.where(status: "open", doctor: current_user)
+    @conversations = []
+    all_conversations.each do |c|
+      has_doc_msg = c.messages.select { |m| m.user.class == Doctor }
+      if has_doc_msg.any?
+        @conversations << c
+      end
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  helper_method :index_old
+
   def show
     @conversation = Conversation.find_by(access_token: params[:access_token])
     @message = Message.new

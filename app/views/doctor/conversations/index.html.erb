@@ -15,9 +15,25 @@
     <div class="col-md-3 col-offset-md-2" id="conversations">
       <h2>Pacientes</h2>
       <div id="conversation-index">
-        <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, doctor_conversations_path, remote: true, id: "refresh" %>
+        <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_new, remote: true, id: "refresh" %>
+        <h3>Nuevas Conversaciones</h3>
         <div class="list-group" id="tabs">
-          <%= render @conversations%>
+          <% current_user.conversations.each do |c| %>
+            <% doc = c.messages.select { |m| m.user.class == Doctor }%>
+            <% if doc.empty? && c.status == "open" %>
+              <%= render "new_conversation", conversation: c %>
+            <% end %>
+          <% end %>
+        </div>
+        <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_old, remote: true, id: "refresh2" %>
+        <h3>Conversaciones Abiertas</h3>
+        <div class="list-group" id="tabs2">
+          <% current_user.conversations.each do |c| %>
+            <% doc = c.messages.select { |m| m.user.class == Doctor }%>
+            <% if doc.any? && c.status == "open" %>
+              <%= render "conversation", conversation: c %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -26,6 +42,56 @@
 
 <script type="text/javascript">
 setInterval(function () {document.getElementById("refresh").click();}, 10000);
+setInterval(function () {document.getElementById("refresh2").click();}, 10000);
+</script>
+<script>
+function getAllConversations(){
+  var idArray = [];
+  $('.list-group-item.list-group-item-action.whatever').each(function () {
+      idArray.push(this.id);
+  });
+  return idArray;
+}
+
+function loopNotifications(array){
+  var arrayLength = array.length;
+  for (var i = 0; i < arrayLength; i++) {
+    if (array[i].length > 5) {
+      var abc = array[i];
+      var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
+      var title = "Nueva Conversación";
+      var options = {
+        body: abc,
+        tag: 'custom'
+      };
+      Notification.requestPermission(function() {
+        var notification = new Notification(title, options);
+
+        notificationEvents.forEach(function(eventName) {
+          notification[eventName] = function(event) {
+            console.log("ok")
+          };
+        });
+        notification.onclick = function(event) {
+          event.preventDefault(); // prevent the browser from focusing the Notification's tab
+          window.open('/doctor/conversations/' + abc, '_blank');
+          this.close();
+        }
+      });
+    };
+  };
+}
+
+function sendNotifications() {
+  var conversations = getAllConversations();
+  if (typeof conversations !== 'undefined' && conversations.length > 0) {
+    loopNotifications(conversations);
+  }
+}
+
+
+setInterval(sendNotifications, 20000); // Every 1 second, the `refresh` function is called.
+
 </script>
 
 
