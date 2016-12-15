@@ -1,27 +1,66 @@
-<div class="row col-md-8 col-md-offset-2">
-  <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
-  <h3>Conversando con el Doctor <%= @conversation.doctor.doctor_profile.last_name %></h3>
-
-
-  <div class="panel panel-default">
-    <% if @conversation.messages.any? %>
-      <div class="panel-body" id="messages">
-        <%= render partial: 'messages/message', collection: @conversation.messages%>
+<div class="white-bg">
+<div class="container ">
+  <section class="section-padding-20 ">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="panel">
+           <div class="title-panel">
+              <div class="pull-left">
+                  <strong>Noviembre 28 - 2016</strong>
+              </div>
+              <div class="pull-right">
+                <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, conversation_path(@conversation), remote: true, id: "refresh" %>
+              </div>
+              <div class="clearfix"></div>
+           </div>
+          <% if @conversation.messages.any? %>
+            <div class="panel-body" id="messages">
+              <%= render partial: 'messages/message', collection: @conversation.messages.reverse%>
+            </div>
+          <%else%>
+            <div class="panel-body hidden" id="messages"></div>
+          <%end%>
+        </div>
+        <div id="conversationbox">
+          <%= render partial: 'conversation_status', locals: {message: @message, conversation: @conversation} %>
+        </div>
       </div>
-    <%else%>
-      <div class="panel-body hidden" id="messages">
+      <div class="col-md-4">
+        <div class="detail-user col-md-offset-2">
+          <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
+          <strong>Conversando con el doctor</strong>
+          <h3 class="doctor-title"><%= @conversation.doctor.doctor_profile.last_name %></h3>
+          <div class="status-user">
+            <span class="icon-status"> </span><span>ONLINE</span>
+          </div>
+          <div class="line-detail"></div>
+          <img src="/assets/ingresa-tus-datos-mediChat.png" alt="">
+          <h3 class="paciente-title">Pedro Silva</h3>
+          <strong>Paciente</strong>
+        </div>
       </div>
-    <%end%>
-  </div>
-  <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, conversation_path(@conversation), remote: true, id: "refresh" %>
-    <div id="conversationbox">
-      <%= render partial: 'conversation_status', locals: {message: @message, conversation: @conversation} %>
+      <div class="col-md-12">
+        <div class="form-bottom">
+          <div class="col-md-8">
+            <div class="form-message">
+              <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="send-message">
+              <img src="/assets/attach.png" alt="Adjuntar archivo">
+              <button id="btnSendMessage" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
-    <div>
-    <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
-    </div>
+    <div class="clearfix"></div>
+    <script type="text/javascript">
+      setInterval(function () {document.getElementById("refresh").click();}, 10000);
+    </script>
+  </section>
 </div>
 
-<script type="text/javascript">
-setInterval(function () {document.getElementById("refresh").click();}, 10000);
-</script>
+<%= render partial: 'pages/footer' %>

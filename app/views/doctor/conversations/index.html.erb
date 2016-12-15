@@ -1,44 +1,60 @@
-<div class="container slightly-padded">
+<div class="container slightly-padded doctor">
   <div class="row">
     <% if current_user.doctor_profile.available == false %>
       <div class="col-md-12 text-center unavailable">
-        <p>Estas actualmente en modo 'No Disponible' entonces no puedes recibir chats. Para recibir chats cambia a modo Disponible</p>
-        <%= link_to 'Cambiar a Disponible', doctor_make_available_path, method: "post", class: 'btn btn-success'%>
+        <p class="wt">Estas actualmente en modo <strong>'No Disponible'</strong> entonces no puedes recibir chats. Para recibir chats cambia a modo <strong>Disponible</strong></p>
+        <%= link_to 'Cambiar a Disponible', doctor_make_available_path, method: "post", class: 'btn btn-primary'%>
       </div>
     <% else %>
       <div class="col-md-12 text-center unavailable">
-        <p>Estas actualmente en modo 'Disponible'. Para dejar de recibir nuevos chats cambia a modo 'No Disponible'.</p>
-        <%= link_to 'Cambiar a No Disponible', doctor_make_unavailable_path, method: "post", class: 'btn btn-danger' %>
+        <p class="wt">Estas actualmente en modo <strong>'Disponible'</strong>. Para dejar de recibir nuevos chats cambia a modo <strong>'No Disponible'</strong>.</p>
+        <%= link_to 'Cambiar a No Disponible', doctor_make_unavailable_path, method: "post", class: 'btn btn-primary' %>
       </div>
     <% end %>
 
-    <div class="col-md-3 col-offset-md-2" id="conversations">
-      <h2>Pacientes</h2>
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5" id="conversations">
       <div id="conversation-index">
-        <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_new, remote: true, id: "refresh" %>
-        <h3>Nuevas Conversaciones</h3>
-        <div class="list-group" id="tabs">
-          <% current_user.conversations.each do |c| %>
-            <% doc = c.messages.select { |m| m.user.class == Doctor }%>
-            <% if doc.empty? && c.status == "open" %>
-              <%= render "new_conversation", conversation: c %>
-            <% end %>
-          <% end %>
+        <div class="col-md-6">
+          <h3>Pacientes No Atendidos</h3>
+          <div class="bg-white">
+            <div class="pull-right">
+              <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_new, remote: true, id: "refresh" %>
+            </div>
+            <div class="clearfix"></div>
+            <div class="list-group" id="tabs">
+              <% current_user.conversations.each do |c| %>
+                <% doc = c.messages.select { |m| m.user.class == Doctor }%>
+                <% if doc.empty? && c.status == "open" %>
+                  <%= render "new_conversation", conversation: c %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
-        <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_old, remote: true, id: "refresh2" %>
-        <h3>Conversaciones Abiertas</h3>
-        <div class="list-group" id="tabs2">
-          <% current_user.conversations.each do |c| %>
-            <% doc = c.messages.select { |m| m.user.class == Doctor }%>
-            <% if doc.any? && c.status == "open" %>
-              <%= render "conversation", conversation: c %>
-            <% end %>
-          <% end %>
+        <div class="col-md-6">
+          <h3>Pacientes Atendidos</h3>
+          <div class="bg-white">
+            <div class="pull-right">
+              <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_old, remote: true, id: "refresh2" %>
+            </div>
+            <div class="clearfix"></div>
+            <div class="list-group" id="tabs2">
+              <% current_user.conversations.each do |c| %>
+                <% doc = c.messages.select { |m| m.user.class == Doctor }%>
+                <% if doc.any? && c.status == "open" %>
+                  <%= render "conversation", conversation: c %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
 </div>
+
+<%= render partial: 'pages/footer' %>
 
 <script type="text/javascript">
 setInterval(function () {document.getElementById("refresh").click();}, 10000);
@@ -61,8 +77,9 @@ function loopNotifications(array){
       var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
       var title = "Nueva Conversación";
       var options = {
-        body: abc,
-        tag: 'custom'
+        body: "Un nuevo paciente espera tu respuesta",
+        tag: 'custom',
+        requireInteraction: true
       };
       Notification.requestPermission(function() {
         var notification = new Notification(title, options);
@@ -73,8 +90,8 @@ function loopNotifications(array){
           };
         });
         notification.onclick = function(event) {
-          event.preventDefault(); // prevent the browser from focusing the Notification's tab
-          window.open('/doctor/conversations/' + abc, '_blank');
+          parent.focus();
+          window.open('/doctor/conversations/' + abc, '/doctor/conversations/' + abc);
           this.close();
         }
       });
@@ -90,7 +107,7 @@ function sendNotifications() {
 }
 
 
-setInterval(sendNotifications, 20000); // Every 1 second, the `refresh` function is called.
+setInterval(sendNotifications, 25000); // Every 1 second, the `refresh` function is called.
 
 </script>
 

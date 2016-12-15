@@ -6,31 +6,34 @@ if ($('#kapor').text().length) {
       return $('#messages').not(".hidden #messages").append(this.renderMessage(data));
     },
     renderMessage: function(data) {
-      var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
-      var title = data.user + " mandó un mensaje";
-      var options = {
-        body: data.message,
-        tag: 'custom'
-      };
-      Notification.requestPermission(function() {
-        if (title.substring(0,3) == "Dr."){
-          console.log("ok");
-        } else {
-          var notification = new Notification(title, options);
+    if(window.location.href.indexOf("doctor") > 0) {
+        var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
+        var title = data.user + " mandó un mensaje";
+        var options = {
+          body: data.message,
+          tag: data.user,
+          requireInteraction: true
+        };
+        Notification.requestPermission(function() {
+          if (title.substring(0,3) == "Dr."){
+            console.log("ok");
+          } else {
+            var notification = new Notification(title, options);
 
-          notificationEvents.forEach(function(eventName) {
-            notification[eventName] = function(event) {
-              console.log(data.message)
-            };
-          });
-          notification.onclick = function(event) {
-            event.preventDefault(); // prevent the browser from focusing the Notification's tab
-            window.open('/doctor/conversations/' + abc, '_blank');
-            this.close();
+            notificationEvents.forEach(function(eventName) {
+              notification[eventName] = function(event) {
+                console.log(data.message)
+              };
+            });
+            notification.onclick = function(event) {
+              parent.focus();
+              window.focus();
+              this.close();
+            }
           }
-        }
-      });
-      return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
+        });
+      }
+      return "<p class='wawalilawa'> <b>" + data.user + ": </b>" + data.message + "</p>";
     }
   });
 }

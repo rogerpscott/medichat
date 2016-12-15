@@ -1,8 +1,12 @@
-<div class="container padded">
+<div class="container padded paciente">
   <div class="row">
-    <div class="text-center">
-      <%= link_to "Chatea con un Doctor", conversations_path, method: 'post', class: 'btn btn-primary' %>
-    </div>
+    <section class=" ">
+      <div class="text-center">
+      	<%= link_to "Iniciar chat con un doctor", conversations_path, method: 'post', class: 'btn btn-primary' %>
+    	</div>
+  </section>
   </div>
 </div>
 
+
+<%= render partial: 'pages/footer' %>

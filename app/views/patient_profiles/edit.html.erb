@@ -1,28 +1,40 @@
-<div class="container">
+<div class="container perfil">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5">
       <div id="background-form">
-        <h2>Cambiar mis datos</h2>
-
         <%= simple_form_for @patient_profile do |f| %>
-        <div class="form-inputs row">
-            <%= f.input :first_name, label: :Nombre, required: false, autofocus: true %>
-            <%= f.input :last_name, label: :Apellido, required: false %>
-            <%= f.input :dni, label: :DNI, required: false %>
-            <%= f.input :phone, label: :Telefono, required: false %>
-            <%= f.input :age, label: :Edad, required: false %>
-            <%= f.input :sex, collection: PatientProfile::SEX, label: :Sexo, required: false %>
-            <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: :Tipo_de_sangre, required: false %>
-            <%= f.input :existing_conditions, label: :Enfermedades_preexistentes, required: false %>
-            <%= f.input :allergies, label: :Alergias, required: false %>
+        <div class=" row form-inputs">
+            <div class="col-md-6">
+              <div class="bg-white">
+                <div><h2>Registro</h2></div>
+                <%= f.input :first_name, label: false, required: false, autofocus: true, placeholder: "Nombre" %>
+                <%= f.input :last_name, label: false, required: false, placeholder: "Apellido" %>
+                <%= f.input :dni, label: false, required: false, placeholder: "DNI" %>
+                <%= f.input :phone, label: false, required: false, placeholder: "Teléfono" %>
+                <%= f.input :age, label: false, required: false, placeholder: "Edad" %>    
+              </div>
+              
+            </div>
+            <div class="col-md-6">
+              <div class="bg-white">
+                <%= f.input :sex, collection: PatientProfile::SEX, label: false, required: false, placeholder: "Sexo" %>
+                <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: false, required: false,placeholder: "Tipo de sangre" %>
+                <%= f.input :existing_conditions, label: false, required: false, placeholder: "Enfermedades preexistentes" %>
+                <%= f.input :allergies, label: false, required: false, placeholder: "Alergias" %>  
+                <div class="form-actions text-center" >
+                  <%= f.button :submit, "Actualizar" %>
+                </div>
+              </div>            
+            </div>            
+            <div class="clearfix"></div>
         </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Actualizar" %>
-        </div>
         <% end %>
 
       </div>
     </div>
   </div>
 </div>
+
+
+<%= render partial: 'pages/footer' %>

@@ -30,16 +30,9 @@
                  <%= t(".profile", default: "Historial") %>
               <% end %></li>
           <% end %>
-          <li class="navbar-wagon-item navbar-wagon-link"><%= link_to log_out_well_path do %>
+          <li class="log-out"><%= link_to log_out_well_path do %>
              <%= t(".sign_out", default: "Log out") %>
           <% end %></li>
-
-        <% else %>
-
-          <!-- Login text link -->
-          <li class="navbar-wagon-item navbar-wagon-link"><%= link_to new_user_session_path do %>
-          <%= t(".sign_in", default: "Login")%></li>
-          <% end %>
 
         <% end %>
       </ul>

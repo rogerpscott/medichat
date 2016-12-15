@@ -4,7 +4,7 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
-// Paddings
+/*Paddings*/
 .padded {
   padding-top: 5em;
   padding-bottom: 5em;
@@ -71,6 +71,7 @@ Primary use:  HelpZone Template
 html,
 body {
   height: 100%;
+  font-size:62.5%;
 }
 a {
   -webkit-transition: color 0.2s ease;
@@ -182,8 +183,11 @@ img {
 ==============================*/
 body {
   font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  color: #fff;
 }
 h1,
 h2,
@@ -191,7 +195,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
   margin-top: 0;
   line-height: normal;
   font-weight: 500;
@@ -215,10 +218,25 @@ h5 {
 h6 {
   font-size: 16px;
 }
+section h2 {
+  font-size: 5rem;
+  text-align: center;
+  color: #3F5760;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+h2 span {
+    display: block;
+    border-bottom: 6px solid #4EB5AB;
+    padding: 5px 0;
+    width: 126px;
+    margin: 0 auto;
+}
 p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size:14px;
+  font-size:1.4rem;
   line-height: 24px;
   margin: 0 0 20px;
 }
@@ -231,6 +249,7 @@ a {
 sub {
   bottom: 0;
 }
+
 /*==============================
   Header
 ==============================*/
@@ -263,8 +282,8 @@ sub {
 .desktop-navigation li a {
   display: block;
   line-height: 62px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: bold;
   padding: 0;
   letter-spacing: 0.5px;
   backface-visibility: hidden;
@@ -428,9 +447,9 @@ sub {
 .home {
   position: relative;
   width: 100%;
-  height: 100vh;
-  padding-top: 62px;
-  background-image: url("background_home2.jpg");
+  padding-bottom: 100px;
+  padding-top: 70px;
+  background: url("background_home.jpg") center center no-repeat transparent; 
 }
 .home__title {
   display: table;
@@ -441,21 +460,60 @@ sub {
   display: table-cell;
   height: 100%;
   vertical-align: middle;
-  text-align: center;
 }
 .home__text-wrap h1 {
-  font-size: 42px;
-  font-weight: 500;
+  font-size: 4.6rem;
+  font-weight: bold;
   letter-spacing: 0.5px;
   vertical-align: top;
-  margin: 0;
-  color: #616668 !important;
+  color: #fff;
+  font-weight: bold;
+}
+.home__text-wrap h1 span {
+  font-weight: normal;
+}
+.home__text-wrap h2{
+  display: inline-block;
+  font-size: 3rem;
+  color: #fff;
+  margin: 15px 0 5px 0; 
+}
+p.text-m{
+  font-size: 2rem;
+}
+.text-p{
+  
+}
+.form-horizontal .radio, .form-horizontal .checkbox{
+  margin-left: 14px;
+}
+.radio label, .checkbox label{
+  font-size: 1.6rem;
+}
+.form-control{
+  background-color: rgba(0, 0, 0, 0);
+  border: 0 none;
+  border-bottom: 1px solid #fff;
+  box-shadow: none;
+  color: #fff;
+}
+.form-control:focus {
+  border-color: #4EB5AB;
+  outline: 0;
+  box-shadow: none;
+}
+input.btn.btn-default {
+  background-color: #4EB5AB;
+  border-color: #4EB5AB;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 15px;
 }
 .home__text-wrap p {
   font-size: 16px;
   font-weight: 400;
-  margin: 0 0 30px;
-  color: #616668 !important;
+  margin: 0;
 }
 .home__search {
   margin-top: 20px;
@@ -521,28 +579,6 @@ sub {
 /*==============================
   Content
 ==============================*/
-.section-title h2 {
-  display: block;
-  position: relative;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 15px;
-  line-height: 100%;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: 20px;
-}
-.section-title h2:before {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 30px;
-  left: 50%;
-  bottom: 0;
-  margin: 0 0 -10px -15px;
-  z-index: 1;
-}
 .section-title p {
   display: block;
   position: relative;
@@ -597,6 +633,20 @@ sub {
   -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.25);
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
+li {
+    color: #3F5760;
+    font-size: 2.4rem;
+    line-height: 4.5rem;
+    font-weight: 400;
+    list-style: none;
+}
+li .span-icon{
+    margin: 0 10px 0 -30px;
+    background-color: #fff;
+    color: #4EB5AB;
+    font-size: 2rem;
+    font-weight: normal;
+}
 /*==============================
   Sliders(owl-carousel)
 ==============================*/
@@ -650,52 +700,71 @@ sub {
   -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.25);
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
+.about h2{
+  color: #fff;
+}
+.about h2 strong{
+  font-weight: normal;
+  display: block;
+}
+.text-center{
+  text-align: center;
+  color: #3F5760;
+  font-size: 2.6rem;
+  text-align: center;
+  line-height: 3.8rem;
+}
 /* Service card */
 .service-card {
   margin: 15px 0;
+}
+.service-card .box{
+  max-width: 290px;
+  padding: 10px;
 }
 .service-card a {
   display: block;
   width: 100%;
   height: 100%;
+  color: #3F5760;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.service-card p {
+  font-size: 1.6rem;
+  text-align: justify;
+}
+.service-card img.img-card {
+    width: 70px;
 }
 .service-card h2 {
   display: block;
   position: relative;
-  font-size: 27px;
   line-height: 100%;
   font-weight: 400;
-  margin-left: 70px;
   margin-bottom: 5px;
 }
 .service-card h6 {
   display: block;
   position: relative;
-  font-size: 13px;
+  font-size: 1.8rem;
   text-transform: uppercase;
-  margin-left: 70px;
-  margin-bottom: 5px;
+  margin: 5px 0;
+  height: 42px;
 }
 .service-card h6 span {
   margin-right: 6px;
 }
 .service-card p {
-  margin: 10px 0 0 70px;
+  margin: 0;
 }
 .service-card .icon {
   display: block;
-  position: absolute;
-  width: 50px;
-  height: 50px;
   text-align: center;
-  line-height: 50px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  top: 15px;
-  left: 15px;
-  font-weight: 700;
-  font-size: 24px;
+  font-size: 42px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   will-change: box-shadow;
@@ -728,75 +797,62 @@ sub {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
 }
+.about-medichat{
+  background: url("sobre-medichat.jpg") no-repeat center center;
+}
+.about-medichat h2{
+  color: #fff;
+}
+.about-medichat p.text-j{
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: justify;
+}
+.important-s p{
+  font-size: 1.7rem;
+  line-height: 3.4rem;
+}
 /* Article card */
+.article-card-gray {
+  background-color: #4EB5AB;
+  padding: 10px;
+  max-width: 470px;
+  border-radius: 5px;
+}
+.article-card-gray p{
+  margin: 0;
+  color: #fff;
+  font-size: 1.7rem;
+}
+.article-card-gray p:after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 15px solid rgba(0, 0, 0, 0);
+  border-top: 15px solid #4EB5AB;
+  border-left: 15px solid #4EB5AB;
+  border-bottom: 18px solid rgba(0, 0, 0, 0);
+  display: block;
+  position: absolute;
+  bottom: -33px;
+  left: 55px;
+}
+.article-card.center-b{
+  border-right: 5px solid #fff;
+  border-left: 5px solid #fff;
+}
 .article-card {
-  height: 360px;
   margin: 15px 0;
   padding: 15px 20px 30px;
+  text-align: center;
 }
-.article-card .card-wrap {
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  border-radius: 4px;
+.article-card img{
+  margin: 0 0 10px 0;
 }
-.article-card .card-wrap a {
-  position: absolute;
-  display: block;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 4;
-}
-.article-card .card-wrap img {
-  position: absolute;
-  top: -999px;
-  bottom: -999px;
-  left: -999px;
-  right: -999px;
-  margin: auto;
-  z-index: 1;
-  max-width: none;
-}
-.article-card .card-wrap .category {
-  font-family: 'Open Sans', sans-serif;
-  display: inline-block;
-  position: relative;
-  margin: 20px 0 0 20px;
-  padding: 0 6px;
-  line-height: 16px;
-  font-size: 11px;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 2px;
-  z-index: 3;
-}
-.article-card .card-wrap h3 {
-  display: block;
-  position: relative;
-  padding: 0 20px;
-  margin: 15px 0;
-  font-size: 30px;
-  line-height: 32px;
-  letter-spacing: 0.8px;
-  z-index: 3;
-  -webkit-transition: color 0.2s;
-  -moz-transition: color 0.2s;
-  transition: color 0.2s;
-}
-.article-card .card-wrap p {
-  display: block;
-  position: relative;
-  padding: 0 20px;
-  margin: 0;
-  font-size: 15px;
-  z-index: 3;
+.article-card p{
+  color: #fff;
+  font-size: 2rem;
+  line-height: 3rem;
 }
 .article-card .card-wrap .statistic {
   display: block;
@@ -833,44 +889,43 @@ sub {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
 }
-.article-card .card-wrap:before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  -webkit-transition: 0.4s all;
-  -moz-transition: 0.4s all;
-  transition: 0.4s all;
+/* ventajas */
+.ventajas{
+  background: url("ventajas-medichat.jpg") no-repeat center center;
 }
-.article-card--white .card-wrap:before {
-  display: none;
+.ventajas h2{
+  color: #fff;
 }
 /* FAQ card */
 .faq-card {
-  height: 200px;
+  background-color: rgba(12,124,118,0.6);
+  height: 250px;
   margin-top: 15px;
   margin-bottom: 15px;
   overflow: hidden;
   padding: 20px;
+  text-align: center;
 }
 .faq-card h3 {
-  display: block;
-  position: relative;
-  font-size: 26px;
-  letter-spacing: 0.8px;
+  font-size: 2.1rem;
+  text-align: center;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 .faq-card p {
-  display: block;
-  font-size: 15px;
-  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
+}
+#como-funciona p strong {
+  color: #4EB5AB;
 }
 /* Testimonial card */
+.testimonial-card {
+  background-color: #fff;
+}
+.testimonial-card:after {
+  color: rgba(117,117,117,0.4);
+}
 .testimonial-card {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -878,37 +933,41 @@ sub {
   text-align: center;
 }
 .testimonial-card img {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+
 }
 .testimonial-card h4 {
   font-size: 24px;
   margin-bottom: 5px;
-  margin-top: 50px;
-  font-weight: 400;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #4EB5AB;
 }
 .testimonial-card span {
-  font-size: 16px;
-  margin-bottom: 10px;
+  color: #3F5760;
+  display: block;
+  font-weight: bold;
+  padding: 5px 0;
+  font-size: 2rem;
 }
 .testimonial-card p {
   padding: 15px 50px 0;
   margin: 0;
-  font-size: 15px;
+  font-size: 1.6rem;
 }
-/*.testimonial-card:after {
-  font-family: Material-Design-Iconic-Font;
-  content: '\f1b2';
-  position: absolute;
-  font-size: 36px;
-  top: 30px;
-  left: 65px;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  transform: rotate(180deg);
-}*/
+.section-footer .text-f {
+  text-align: center;
+  margin-top: -23px;
+  font-size: 3rem;
+}
+.section-footer .text-f strong {
+  background-color: #fff;
+  font-size: 3rem;
+  padding: 0 25px;
+  color: #4EB5AB;
+}
+.section-footer .line {
+  border: 1px solid #3F5760;
+}
 /* Team card */
 .team-card {
   margin-top: 15px;
@@ -1848,7 +1907,300 @@ sub {
     left: 100%;
   }
 }
-
+.section-padding-20 {
+  padding: 20px 0 0 0;
+}
+.desktop-navigation li.log-out a {
+  background-color: #465A64;
+  padding: 10px;
+  display: block;
+  line-height: 17px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.paciente{
+  position: relative;
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 70px;
+  background: url("paciente.jpg") bottom right no-repeat transparent; 
+  height: 816px;
+}
+.doctor{
+  position: relative;
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 70px;
+  background: url("doctor.jpg") center center no-repeat transparent;
+  min-height: 816px;
+}
+.perfil{
+  position: relative;
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 190px;
+  background: url("perfil.jpg") bottom center no-repeat transparent;
+  height: 816px;
+}
+.diagnostico{
+  position: relative;
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 70px;
+  background: url("diagnostico.jpg") bottom center no-repeat transparent; 
+}
+.historial{
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 190px;
+  background-color: #fff;
+  height: 816px; 
+}
+.historial h3{
+  color: #465A64;
+}
+.wt{
+  font-size: 2rem;
+  color: #fff;
+}
+.paciente .btn-primary,.doctor .btn-primary {
+    background-color: #fff;
+    color: #4EB5AB;
+    border-color: #fff;
+    font-weight: bold;
+    font-size: 3rem;
+    border-radius: 7px;
+    box-shadow: 1px 3px 15px #465A64;
+}
+#conversation-index{
+  margin-top: 20px;
+}
+#conversation-index h3{
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+.paciente .btn-primary:focus, 
+.paciente .btn-primary:active
+.doctor .btn-primary:focus, 
+.doctor .btn-primary:active
+{
+  color: #4EB5AB;
+  background-color: #fff;
+  border-color: #fff;
+}
+.form-bottom{
+  background-color: #ADBCC5;
+  margin: 10px 0 0 0;
+}
+.form-message {
+  background-color: #ADBCC5;
+  padding: 25px;
+  color: #3F5760;
+}
+#messages strong{
+  background-color: rgba(0, 0, 0, 0);
+  color: #3F5760;
+  font-size: 2rem;
+}
+#message_content{
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #3F5760;
+  height: 100px;
+}
+.doctor-text-chat{
+  background-color: #ADBCC5;
+  padding: 15px;
+  border-radius: 5px;
+  color: #3F5760;
+  display: inline-block;
+  position: relative;
+  min-width: 60px;
+}
+.patient-text-chat{
+  background-color: #80C8C2;
+  padding: 15px;
+  border-radius: 5px;
+  color: #3F5760;
+  display: inline-block;
+  position: relative;
+  min-width: 60px;
+}
+p.patient-text-chat:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 15px solid rgba(0, 0, 0, 0);
+  border-top: 15px solid #80C8C2;
+  border-left: 15px solid #80C8C2;
+  border-bottom: 15px solid rgba(0, 0, 0, 0);
+  display: block;
+  position: absolute;
+  bottom: -28px;
+  left: 20px;
+}
+p.doctor-text-chat:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 15px solid #ADBCC5;
+  border-top: 15px solid #ADBCC5;
+  border-left: 15px solid rgba(0, 0, 0, 0);
+  border-bottom: 15px solid rgba(0, 0, 0, 0);
+  display: block;
+  position: absolute;
+  bottom: -28px;
+  right: 20px;
+}
+.send-message{
+  margin: 20px;
+  padding: 32px;
+  text-align: center;
+}
+.send-message .btn{
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: #465A64;
+  border-color: #465A64;
+  font-size: 2rem;
+}
+.send-message img {
+  padding: 0 10px;
+  margin: 0 10px;
+}
+.detail-user {
+  background-color: #ADBCC5;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 2px 2px 10px #465A64;
+}
+.doctor-title, .paciente-title{
+  color: #465A64;
+  font-weight: bold;
+  margin: 0;
+}
+.detail-user strong{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: normal;
+  max-width: 123px;
+  display: inline-block;
+}
+.line-detail {
+  padding: 4px;
+  width: 150px;
+  margin: 10px auto;
+  background-color: #4EB5AB;
+}
+.status-user .icon-status {
+  background-color: #66B22E;
+  width: 10px;
+  border-radius: 50%;
+  padding: 7px;
+  display: inline-block;
+  margin: 0 10px;
+}
+.detail-user img {
+  margin: 40px auto;
+  display: inline-block;
+}
+.status-user span {
+  line-height: 3.2rem;
+  vertical-align: middle;
+  font-size: 2rem;
+  display: inline-block;
+  margin: 20px 0;
+  font-weight: normal;
+}
+.title-panel{
+  color: #3F5760;
+  font-size: 2rem;
+  border-bottom: 1px solid #3F5760;
+}
+#refresh,#refresh2{
+  color: #3F5760;
+}
+.panel{
+  box-shadow: none;
+}
+.panel-body{
+  padding: 15px 0;
+}
+.top-d-c{
+  background-color: #ADBCC5;
+  padding: 20px;
+}
+.top-d-c p{
+  color: #465A64;
+}
+.list-group .link-conversacion{
+  border: 0 none;
+  border-bottom:1px solid #465A64;
+  background-color: transparent;
+  text-decoration: none;
+  display: block;
+  font-size: 1.8rem;
+  color:#465A64;
+  margin-left: 30px;
+  padding: 0;
+  border-radius: 0;
+}
+.list-group .link-conversacion:hover,.list-group .link-conversacion:active{
+  border:0 none;
+  background-color: transparent;
+}
+.item-conversarcion{
+  position: relative;
+}
+.item-conversarcion .icon-status{
+  background-color: #66B22E;
+  width: 10px;
+  border-radius: 50%;
+  padding: 7px;
+  display: inline-block;
+  margin: 0 10px;
+  margin-top: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item-conversarcion .icon-status.active{
+  background-color: #66B22E;
+}
+.item-conversarcion .icon-status.no-active{
+  background-color: #66B22E;
+}
+.bg-white{
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 15px;
+  min-height: 464px;
+}
+.bg-white h2{
+  color: #4EB5AB;
+  font-weight: bold;
+}
+.bg-white .form-control{
+  color: #757575;
+  border-bottom-color: #757575;
+  border-radius: 0;
+}
+.text-center{
+  text-align: center;
+}
+.bg-white .form-group{
+  margin-left: 0;
+  margin-right: 0;
+}
+.bg-white input.btn.btn-default{
+  border-radius: 6px;
+  font-size: 1.9rem;
+  padding: 8px 15px;
+}
 /*----------------------------------------
 [Master Stylesheet]
 
@@ -1886,18 +2238,18 @@ Primary use:  HelpZone Template
   Common styles
 ==============================*/
 ::-moz-selection {
-  background: #fafafa;
-  color: #ef5350;
+  background: rgba(0, 0, 0, 0);
+  color: #4EB5AB;
   text-shadow: none;
 }
 ::-webkit-selection {
-  background: #fafafa;
+  background: rgba(0, 0, 0, 0);
   color: #ef5350;
   text-shadow: none;
 }
 ::selection {
-  background: #fafafa;
-  color: #ef5350;
+  background: rgba(0, 0, 0, 0);
+  color: #4EB5AB;
   text-shadow: none;
 }
 textarea,
@@ -1926,15 +2278,7 @@ input:focus {
   border-color: #ef5350;
 }
 body {
-  background-color: #fafafa;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #444;
+  background-color: #4EB5AB;
 }
 p {
   color: #757575;
@@ -1952,6 +2296,9 @@ p a:hover {
 .default-button:focus,
 .default-button:hover {
   color: #fff;
+}
+.gray-bg{
+  background-color: #A2B5BD;
 }
 .white-bg {
   background-color: #fff;
@@ -1978,11 +2325,11 @@ p a:hover {
   background-color: #ef5350;
 }
 .desktop-navigation a {
-  color: #616668;
+  color: #fff;
 }
 
 .desktop-navigation a:hover {
-  color: #e6c58d;
+  color: #fff;
 }
 
 .desktop-navigation a:before {
@@ -2048,12 +2395,6 @@ p a:hover {
 /*==============================
   Content
 ==============================*/
-.section-title h2 {
-  color: rgba(68,68,68,0.7);
-}
-.section-title h2:before {
-  background-color: #ef5350;
-}
 .section-title p {
   color: #444;
 }
@@ -2135,8 +2476,9 @@ p a:hover {
 ==============================*/
 /* Service card */
 .service-card .icon {
-  background-color: #e6c58d;
+  background-color: #4EB5AB;
   color: #fff;
+  padding: 10px 15px;
 }
 
 .card .icon {
@@ -2144,32 +2486,24 @@ p a:hover {
   color: #fff;
 }
 .service-card h6 {
-  color: #757575;
+  color: #4EB5AB;
 }
 .service-card h6 span {
   color: #e6c58d;
 }
-.service-card:hover .icon {
-  background-color: #fff;
-  color: #e6c58d;
-}
-
 .card:hover .icon {
   background-color: #fff;
   color: #e6c58d;
 }
 /* Article card */
 .article-card {
-  background-color: #fff;
+
 }
 .article-card .card-wrap:before {
   background-color: rgba(0,0,0,0.45);
 }
 .article-card h3 {
   color: #fff;
-}
-.article-card p {
-  color: rgba(255,255,255,0.9);
 }
 .article-card .statistic li {
   color: rgba(255,255,255,0.8);
@@ -2195,20 +2529,7 @@ p a:hover {
 .article-card--white .statistic li {
   color: #898989;
 }
-/* FAQ card */
-.faq-card {
-  background-color: #fff;
-}
-/* Testimonial card */
-.testimonial-card {
-  background-color: #fff;
-}
-.testimonial-card span {
-  color: #ef5350;
-}
-.testimonial-card:after {
-  color: rgba(117,117,117,0.4);
-}
+
 /* Team card */
 .team-card {
   background-color: #fff;
@@ -2226,7 +2547,7 @@ p a:hover {
   Footer
 ==============================*/
 .footer {
-  background-color: #424242;
+  background-color: #465A64;
 }
 .footer__copyright small {
   color: #757575;

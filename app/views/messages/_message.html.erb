@@ -1,5 +1,17 @@
 <% if message.user.class == Doctor %>
-  <p><strong>Dr. <%=@conversation.doctor.doctor_profile.last_name%>:</strong> <%=message.content%></p>
+  <div class="doctor-box-chat">
+  	<div class="pull-right">
+  		<strong><%=@conversation.doctor.doctor_profile.last_name%> - Doctor</strong>
+  		<div><p class="doctor-text-chat"> <%=message.content%></p></div>
+  	</div>
+  	<div class="clearfix"></div>
+  </div>
 <% else %>
-  <p><strong><%=@conversation.patient.patient_profile.first_name %>:</strong> <%=message.content%></p>
+	<div class="patient-box-chat">
+  	<div class="pull-left">
+  		<strong><%=@conversation.patient.patient_profile.first_name %> - Paciente</strong>
+  		<div><p class="patient-text-chat"> <%=message.content%></p></div>
+  	</div>
+  	<div class="clearfix"></div>
+  </div>  
 <% end %>
