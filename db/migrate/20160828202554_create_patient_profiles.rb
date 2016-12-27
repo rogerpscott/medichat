@@ -11,6 +11,8 @@ class CreatePatientProfiles < ActiveRecord::Migration[5.0]
       t.string :blood_type
       t.text :existing_conditions
       t.text :allergies
+      t.integer :height
+      t.integer :weight
 
       t.timestamps
     end

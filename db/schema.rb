@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160907233445) do
     t.integer  "doctor_id"
     t.boolean  "available",  default: false
     t.string   "last_name"
+    t.string   "cmp"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -70,6 +71,8 @@ ActiveRecord::Schema.define(version: 20160907233445) do
     t.string   "blood_type"
     t.text     "existing_conditions"
     t.text     "allergies"
+    t.integer  "height"
+    t.integer  "weight"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

@@ -14,21 +14,21 @@
                 <!--% = f.input :email, label: false, required: false, placeholder: "Correo" %-->
                 <%= f.input :age, label: false, required: false, placeholder: "Edad" %>
               </div>
-              
+
             </div>
             <div class="col-md-6 box-register">
               <div class="bg-white">
                 <%= f.input :sex, collection: PatientProfile::SEX, label: false, required: false, placeholder: "Sexo" %>
                 <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: false, required: false,placeholder: "Tipo de sangre" %>
-                <!--% = f.input :height, label: false, required: false, placeholder: "Talla" % >
-                < % = f.input :weight, label: false, required: false, placeholder: "Peso" %-->
+                <%= f.input :height, label: false, required: false, placeholder: "Talla" %>
+                <%= f.input :weight, label: false, required: false, placeholder: "Peso" %>
                 <%= f.input :existing_conditions, label: false, required: false, placeholder: "Enfermedades preexistentes" %>
-                <%= f.input :allergies, label: false, required: false, placeholder: "Alergias" %>  
+                <%= f.input :allergies, label: false, required: false, placeholder: "Alergias" %>
                 <div class="form-actions text-center" >
                   <%= f.button :submit, "Actualizar" %>
                 </div>
-              </div>            
-            </div>            
+              </div>
+            </div>
             <div class="clearfix"></div>
         </div>
 

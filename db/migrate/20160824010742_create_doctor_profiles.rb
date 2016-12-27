@@ -4,6 +4,7 @@ class CreateDoctorProfiles < ActiveRecord::Migration[5.0]
       t.integer :doctor_id
       t.boolean :available, default: false
       t.string :last_name
+      t.string :cmp
 
       t.timestamps
     end

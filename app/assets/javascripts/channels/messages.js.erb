@@ -17,6 +17,8 @@ if ($('#kapor').text().length) {
         Notification.requestPermission(function() {
           if (title.substring(0,3) == "Dr."){
             console.log("ok");
+            // En la vista del doctor el mensaje del doctor
+            return '<div class="item-chat"><div class="dd patient-box-chat-box-chat"><div class="pull-right"><strong>'+ data.user +' - Paciente </strong><div><p class="patient-box-chat-text-chat"> '+ data.message +'</p></div></div><div class="clearfix"></div></div><div class="clearfix"></div></div>';
           } else {
             var notification = new Notification(title, options);
 
@@ -30,10 +32,20 @@ if ($('#kapor').text().length) {
               window.focus();
               this.close();
             }
+          // En la vista del doctor el mensaje del paciente
+          return '<div class="item-chat"><div class="dd doctor-box-chat"><div class="pull-right"><strong>'+ data.user +' - Paciente </strong><div><p class="doctor-text-chat"> '+ data.message +'</p></div></div><div class="clearfix"></div></div><div class="clearfix"></div></div>';
           }
         });
       }
-      return '<div class="item-chat"><div class="dd doctor-box-chat"><div class="pull-right"><strong>'+ data.user +' - Paciente </strong><div><p class="doctor-text-chat"> '+ data.message +'</p></div></div><div class="clearfix"></div></div><div class="clearfix"></div></div>';
+      else {
+        if (title.substring(0,3) == "Dr."){
+          // En la vista del paciente el mensaje del doctor
+          return '<div class="item-chat"><div class="dd doctor-box-chat"><div class="pull-right"><strong>'+ data.user +' - Paciente </strong><div><p class="doctor-text-chat"> '+ data.message +'</p></div></div><div class="clearfix"></div></div><div class="clearfix"></div></div>';
+        }
+        else {
+          // En la vista del paciente el mensaje del paciente
+          return '<div class="item-chat"><div class="dd patient-text-chat-box-chat"><div class="pull-right"><strong>'+ data.user +' - Paciente </strong><div><p class="patient-text-chat-text-chat"> '+ data.message +'</p></div></div><div class="clearfix"></div></div><div class="clearfix"></div></div>';
+        }
     }
   });
 }

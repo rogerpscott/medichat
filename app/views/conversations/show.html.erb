@@ -6,12 +6,18 @@
         <div class="panel">
            <div class="title-panel">
               <div class="pull-left">
-                  <strong>Noviembre 28 - 2016</strong>
+                  <strong>
+                    <script>
+                      var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                      var f=new Date();
+                      document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+                    </script>
+                  </strong>
               </div>
               <div class="pull-right">
                 <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, conversation_path(@conversation), remote: true, id: "refresh" %>
               </div>
-              <div class="clearfix"></div>            
+              <div class="clearfix"></div>
            </div>
           <% if @conversation.messages.any? %>
             <div class="panel-body" id="messages">
@@ -30,6 +36,7 @@
           <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
           <strong>Conversando con el doctor</strong>
           <h3 class="doctor-title"><%= @conversation.doctor.doctor_profile.last_name %></h3>
+          <h3 class="doctor-title"><%= @conversation.doctor.doctor_profile.cmp %></h3>
           <div class="status-user">
             <span class="icon-status"> </span><span>ONLINE</span>
           </div>
@@ -62,6 +69,6 @@
       setInterval(function () {document.getElementById("refresh").click();}, 10000);
     </script>
   </section>
-</div>  
+</div>
 
 <%= render partial: 'pages/footer' %>
