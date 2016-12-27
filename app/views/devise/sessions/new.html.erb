@@ -3,9 +3,9 @@
     <div class="col-xs-offset-1 col-xs-10 col-md-4 home__title">
       <div class="home__text-wrap">
         <!-- Title -->
-        <h1>Obtén Orientación Médica de calidad: <span>Es rápido y amigable</span></h1>
-        <p class="text-m">Comienza a disfrutar la experiencia MediChat. </p>
-        <p class="text-p">Para iniciar un chat con un doctor necesitas registrarte.</p>
+        <h1>Obtén Orientación Médica <span>de calidad, rápida y amigable</span></h1>
+        <p class="text-m">Comienza a disfrutar la experiencia MediChat </p>
+        <p class="text-p">Para iniciar un chat con un doctor necesitas registrarte</p>
         <div id="background-form">
         <h2>Inicia sesión</h2>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
@@ -16,6 +16,7 @@
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Inicia sesión" %>
+            <%= f.button :button, "Registrate", :class=>"btn btn-register" %>
           </div>
           <% end %>
         </div>
@@ -29,10 +30,10 @@
   <section class="about section-padding-70 gray-bg">
     <div class="container">
       <div class="row">
-        <h2>Somos Medichat <strong>Orientación Médica Online</strong> <span></span></h2>
+        <h2>Somos MediChat <strong>Orientación Médica Online</strong> <span></span></h2>
         <p class="text-center">Evolución médica a través de la tecnología:<br/>
-        te brindamos la posibilidad de conversar con  nuestro staff médico de calidad <br/>
-        en tiempo real y recibir orientación médica vía <strong>online 24/7.</strong></p>
+        Conversa con nuestro staff médico de calidad <br/>
+        en tiempo real vía <strong>online 24/7.</strong></p>
       </div>
     </div>
   </section>
@@ -44,9 +45,9 @@
       <div class="row">
         <h2>¿Qué hacemos? <span></span></h2>
         <ul>
-          <li><span class="span-icon"><i class="glyphicon glyphicon-ok-circle"></i></span> Brindamos soluciones de tecnología para la industria para la salud.</li>
-          <li><span class="span-icon"><i class="glyphicon glyphicon-ok-circle"></i></span> Ampliamos la oferta médica del país.</li>
-          <li><span class="span-icon"><i class="glyphicon glyphicon-ok-circle"></i></span> Conectamos, en tiempo real, pacientes del doctores de calidad a través del internet <strong>24/7</strong>.</li>
+          <li><span class="span-icon"><i class="glyphicon glyphicon-ok-circle"></i></span> Brindamos soluciones de tecnología para la industria de la salud</li>
+          <li><span class="span-icon"><i class="glyphicon glyphicon-ok-circle"></i></span> Ampliamos la oferta médica del país</li>
+          <li><span class="span-icon"><i class="glyphicon glyphicon-ok-circle"></i></span> Conectamos, en tiempo real, pacientes con doctores de calidad a través de la internet <strong>24/7</strong></li>
         </ul>
       </div>
       <div class="row">
@@ -54,12 +55,12 @@
         <div class="col-xs-12 col-sm-4">
           <div class="service-card">
             <div class="pull-left">
-              <img class="img-card" src="/assets/sobre-medichat.png" alt="Sobre medichat">
+              <%= image_tag "sobre-medichat.png", :alt => "Sobre MediChat", :class=>"img-card" %>
             </div>
             <div class="pull-left box">
-              <a href="#sobre-medichat">Sobre Medichat:</a>
-              <h6>Evolución médica a través de la tecnología</h6>
-              <p>MediChat es una plataforma médicaque nace para cubrir la creciente demanda médica en internet.</p>
+              <a href="#sobre-medichat">Sobre Medichat</a>
+              <h6>Evolución médica</h6>
+              <p>Plataforma médica que nace para cubrir la creciente demanda médica en la internet.</p>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -70,11 +71,11 @@
         <div class="col-xs-12 col-sm-4">
           <div class="service-card">
             <div class="pull-left">
-              <img class="img-card" src="/assets/funciona-medichat.png" alt="Como funciona medichat">
+              <%= image_tag "hacemos.png", :alt => "Como funciona medichat", :class=>"img-card" %>
             </div>
             <div class="pull-left box">
-              <a href="#como-funciona" class="chat-button">Cómo Funciona:</a>
-              <h6>Rápido y Amigable</h6>
+              <a href="#como-funciona" class="chat-button">¿Cómo funciona?</a>
+              <h6>Rápido y amigable</h6>
               <p>MediChat es sencillo de usar.</p>
               <p>En sólo 4 pasos recibe orientación médica de calidad.</p>
             </div>
@@ -87,12 +88,12 @@
         <div class="col-xs-12 col-sm-4">
           <div class="service-card">
             <div class="pull-left">
-              <img class="img-card" src="/assets/ventajas-medichat.png" alt="Ventajas medichat">
+              <%= image_tag "ventajas-medichat.png", :alt => "Ventajas MediChat", :class=>"img-card" %>
             </div>
             <div class="pull-left box">
-              <a href="#ventajas">Ventajas de Medichat:</a>
-              <h6>la orientación médica de tus sueños</h6>
-              <p>En MediChat recibe consejos médicos 24/7, ayudando a evitar la automedicación.</p>
+              <a href="#ventajas">Ventajas de Medichat</a>
+              <h6>Ahorra tiempo y dinero</h6>
+              <p>En MediChat recibe orientación médica 24/7, ayudando a evitar la automedicación.</p>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -109,17 +110,15 @@
       <div class="row">
 
         <!-- Section title -->
-        <div class="col-xs-12">
+        <div class="col-xs-12 section3">
           <div id="sobre-medichat" class="section-title">
-            <h2>Sobre Medichat <span></span></h2>
-            <div class="col-xs-2">
-              <img src="/assets/medichat-logo.png" alt="Logo medichat" />
+            <h2>Sobre MediChat <span></span></h2>
+            <div class="col-xs-3 img-l">
+              <%= image_tag "medichat-logo.png", :alt => "Logo medichat", :class=>"img-sobre" %>
             </div>
-            <div class="col-xs-10">
+            <div class="col-xs-9 text-r">
               <p class="text-j">Hoy en día, muchas personas buscan información en línea y se automedican, generando riesgos importantes 
-            para su salud. Por esa razón creamos MediChat: Para revolucionar la forma como recibes orientación médica y 
-            lograr un impacto positivo en nuestra sociedad, ya que nuestra visión es llevar bienestar en cada país donde 
-            operamos.</p>
+            para su salud. Por esa razón creamos MediChat: para revolucionar la forma en que recibes orientación médica, y lograr un impacto positivo en nuestra sociedad. Nuestra visión es llevar bienestar a cada país donde operamos.</p>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -130,8 +129,8 @@
         <div class="col-xs-12 col-md-4">
           <div class="article-card">
             <div class="card-wrap">
-              <img src="/assets/sobre.png" alt="Servicio de confianza">
-              <p>Nuestra intención es brindar un <strong>servicio de mensajería de confianza</strong>, donde te sientas cómodo de hacer consultas a un doctor en tiempo real.</p>
+              <%= image_tag "sobre.png", :alt => "Servicio de confianza" %>
+              <p>Ofrecemos un servicio de <strong>mensajería de confianza</strong>, donde te sientas cómodo de hacer preguntas a un doctor en tiempo real.</p>
             </div>
           </div>
         </div>
@@ -141,8 +140,8 @@
         <div class="col-xs-12 col-md-4">
           <div class="article-card center-b">
             <div class="card-wrap">
-              <img src="/assets/localizacion.png" alt="Localización mediChat">
-              <p>No importa si te encuentras en tu casa, en tu oficina, a mitad de la noche, o incluso si te encuentras de viaje, usa MediChat para encontrar orientación médica online <strong>en el momento y lugar que lo necesites</strong>.</p>
+              <%= image_tag "localizacion.png", :alt => "Localización MediChat" %>
+              <p>Si tienes <strong>acceso a Internet</strong> tienes acceso a MediChat. Conversa nuestros doctores en el momento y lugar que lo necesites.</p>
             </div>
           </div>
         </div>
@@ -152,8 +151,8 @@
         <div class="col-xs-12 col-md-4">
           <div class="article-card">
             <div class="card-wrap">
-              <img src="/assets/24.png" alt="Atención las 24 horas, mediChat">
-              <p>En MediChat podrás encontrar orientación médica online: con sólo un clic, las <strong>24 horas del día y los 7 días a la semana</strong>. Nuestros doctores absolverán tus dudas en tiempo real, mediante una interfaz amigable y segura para tu comidad.</p>
+              <%= image_tag "24.png", :alt => "Atención las 24 horas - MediChat" %>
+              <p>En MediChat podrás encontrar orientación médica online, con sólo un clic, las <strong>24 horas del día y los 7 días a la semana</strong>.</p>
             </div>
           </div>
         </div>
@@ -163,7 +162,7 @@
         <div class="col-xs-12 col-md-12 col-lg-12">
           <div class="article-card-gray">
             <div class="">
-              <p>Obtén un consejo médico especializado en MediChat, empieza ahora: <strong>CHATEA CON UN DOCTOR.</strong></p>
+              <p>Obtén orientación médica especializada en MediChat, empieza ahora: <a href="#top" class="chat-top">CHATEA CON UN DOCTOR</a>.</p>
             </div>
           </div>
         </div>
@@ -181,7 +180,7 @@
         <!-- Section title -->
         <div class="col-xs-12">
           <div id="como-funciona" class="section-title">
-            <h2>Cómo Funciona <span></span></h2>
+            <h2>¿Cómo Funciona? <span></span></h2>
             <p>Es muy sencillo y rápido, en <strong>4 pasos</strong> recibe orientación de un Doctor:</p>
           </div>
         </div>
@@ -191,9 +190,9 @@
         <div class="col-xs-12 col-md-3">
           <div class="testimonial-card">
             <span>Paso 1</span>
-            <img src="/assets/ingresa-tus-datos-mediChat.png" alt="Ingresa tus datos mediChat">
+            <%= image_tag "ingresa-tus-datos-medichat.png", :alt => "Ingresa tus datos MediChat" %>
             <h4>Ingresa tus datos</h4>            
-            <p>Queremos conocerte, para eso responde algunas preguntas.</p>
+            <p>Queremos conocerte, para eso, responde algunas preguntas.</p>
           </div>
         </div>
         <!-- End Testimonial card -->
@@ -202,9 +201,9 @@
         <div class="col-xs-12 col-md-3">
           <div class="testimonial-card">
             <span>Paso 2</span>
-            <img src="/assets/conversación-mediChat.png" alt="Conversación mediChat">
+            <%= image_tag "sintomas-medichat.png", :alt => "Conversación MediChat" %>
             <h4>Inicia la conversación</h4>            
-            <p>Chatea con un Doctor dando click en el botón: CHATEA CON UN DOCTOR</p>
+            <p>Conversa con un doctor dando clic en el botón: <a href="#top" class="chat-top-2">INICIAR CHAT CON UN DOCTOR</a>.</p>
           </div>
         </div>
         <!-- End Testimonial card -->
@@ -213,9 +212,9 @@
         <div class="col-xs-12 col-md-3">
           <div class="testimonial-card">
             <span>Paso 3</span>
-            <img src="/assets/sintomas-mediChat.png" alt="Sintomas mediChat">
+            <%= image_tag "conversacion-medichat.png", :alt => "Sintomas MediChat" %>
             <h4>Describe tus síntomas</h4>            
-            <p>¿En qué podemos ayudarte? Cuéntanos de tus alergias, dolencias, medicamentos que estás tomando, etc.</p>
+            <p>¿En qué podemos ayudarte? Cuéntanos de tus dolencias, medicamentos que estás tomando, etc.</p>
           </div>
         </div>
         <!-- End Testimonial card -->
@@ -224,9 +223,9 @@
         <div class="col-xs-12 col-md-3">
           <div class="testimonial-card">
             <span>Paso 4</span>
-            <img src="/assets/orientacion-mediChat.png" alt="Orientación mediChat">
+            <%= image_tag "orientacion-medichat.png", :alt => "Orientación MediChat" %>
             <h4>Recibe orientación médica</h4>            
-            <p>Resuelve tus consultas gracias a por un profesional de la salud. ¡Así de fácil!</p>
+            <p>Resuelve tus dudas gracias a un profesional de la salud.</p>
           </div>
         </div>
         <!-- End Testimonial card -->
@@ -234,7 +233,7 @@
         <div class="col-xs-12">
           <div class="section-footer">
             <div class="line"></div>
-            <div class="text-f"><strong>¡Así de facil!</strong></div>
+            <div class="text-f"><strong>¡Así de fácil!</strong></div>
           </div>
         </div>
 
@@ -257,8 +256,8 @@
         <!-- FAQ card -->
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Facilitamos el acceso a orientación médica oportuna, económica y de calidad</h3>
-            <p>Recibe consejos profesionales de nuestro staff de médicos a tu disposición.</p>
+            <h3>Orientación médica oportuna y de calidad</h3>
+            <p>Recibe consejos profesionales de nuestro staff médico a tu disposición.</p>
           </div>
         </div>
         <!-- End FAQ card -->
@@ -266,7 +265,7 @@
         <!-- FAQ card -->
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Atendemos las 24 horas del día 7 días de la semana</h3>
+            <h3>Atendemos las 24 horas, los 7 días de la semana</h3>
             <p>Conectamos pacientes con doctores de calidad en tiempo real a través de la Internet. </p>
           </div>
         </div>
@@ -275,8 +274,8 @@
         <!-- FAQ card -->
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Te ahorramos tiempo:</h3>
-            <p>Te atendemos en 5 minutos aproximadamente. Además para recibir orientación médica con MediChat no requieres cita previa.</p>
+            <h3>Te ahorramos tiempo</h3>
+            <p>Te atendemos en 5 minutos, aproximadamente. Con MediChat no requieres cita previa.</p>
           </div>
         </div>
         <!-- End FAQ card -->
@@ -284,7 +283,7 @@
         <!-- FAQ card -->
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Reducimos el costo de las orientaciones médicas:</h3>
+            <h3>Reducimos el costo de las orientaciones médicas</h3>
             <p>Medichat ayuda a que la salud sea más accesible para todos.</p>
           </div>
         </div>
@@ -292,29 +291,28 @@
 
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Evitamos la automedicación:</h3>
+            <h3>Evitamos la automedicación</h3>
             <p>Siguiendo las recomendaciones de nuestros doctores cuidas tu salud.</p>
           </div>
         </div>
 
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Somos una plataforma rápida y confiable:</h3>
+            <h3>Somos una plataforma rápida y confiable</h3>
             <p>Podrás comunicar tus síntomas al médico y obtener orientación inmediata.</p>
           </div>
         </div>
 
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Estamos al alcance de nuestros afiliados:</h3>
-            <p>Si tienes acceso a Internet, puedes comunicarte con uno de nuestros doctores, en el momento que lo necesites y desde donde estés.</p>
-            <!-- End Text -->
+            <h3>Estamos a tu alcance</h3>
+            <p>Con acceso a internet, nuestros afiliados tienen acceso a MediChat.</p>
           </div>
         </div>
 
         <div class="col-xs-12 col-md-6 col-lg-3">
           <div class="card faq-card">
-            <h3>Guardamos tu historia de conversaciones:</h3>
+            <h3>Guardamos tu historial de conversaciones</h3>
             <p>Para que nuestros doctores puedan darte una mejor orientación cuando la necesites.</p>
           </div>
         </div>

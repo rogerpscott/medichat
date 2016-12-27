@@ -1,14 +1,16 @@
 <div class="top-d-c">
 	<div class="col-md-6">
-		<p>Telefono: <%= patient_profile.phone %> </p>
-	  <p>Edad: <%= patient_profile.age %> </p>
-	  <p>Sexo: <%= patient_profile.sex %> </p>
+		<p><strong>Paciente: <%= patient_profile.first_name %> <%= patient_profile.last_name %> </strong></p>
+		<p><strong>Teléfono:</strong> <%= patient_profile.phone %> </p>
+	  <p><strong>Sexo:</strong> <%= patient_profile.sex %> </p>
+	  <p><strong>Enfermedades pre-existentes:</strong> <%= patient_profile.existing_conditions %></p>	  
 	</div>
 	<div class="col-md-6">
-		<%= link_to "Terminar", edit_doctor_conversation_path, {class: "btn btn-danger"} %>
-		<p>Tipo de Sangre: <%= patient_profile.blood_type %></p>
-  	<p>Enfermedades pre-existentes: <%= patient_profile.existing_conditions %></p>
-  	<p>Alergias: <%= patient_profile.allergies %></p>
+		<div class="pull-right"><%= link_to "Terminar", edit_doctor_conversation_path, {class: "btn btn-danger"} %></div>
+		<div class="clearfix"></div>
+		<p><strong>Edad:</strong> <%= patient_profile.age %> </p>
+		<p><strong>Tipo de Sangre:</strong> <%= patient_profile.blood_type %></p>
+  	<p><strong>Alergias:</strong> <%= patient_profile.allergies %></p>
 	</div>
 	<div class="clearfix"></div>
 </div>

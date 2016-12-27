@@ -1,24 +1,27 @@
 <div class="container perfil">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-7">
       <div id="background-form">
         <%= simple_form_for @patient_profile do |f| %>
         <div class=" row form-inputs">
-            <div class="col-md-6">
+            <div class="col-md-6 box-register">
               <div class="bg-white">
                 <div><h2>Registro</h2></div>
                 <%= f.input :first_name, label: false, required: false, autofocus: true, placeholder: "Nombre" %>
                 <%= f.input :last_name, label: false, required: false, placeholder: "Apellido" %>
                 <%= f.input :dni, label: false, required: false, placeholder: "DNI" %>
                 <%= f.input :phone, label: false, required: false, placeholder: "Teléfono" %>
-                <%= f.input :age, label: false, required: false, placeholder: "Edad" %>    
+                <!--% = f.input :email, label: false, required: false, placeholder: "Correo" %-->
+                <%= f.input :age, label: false, required: false, placeholder: "Edad" %>
               </div>
               
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 box-register">
               <div class="bg-white">
                 <%= f.input :sex, collection: PatientProfile::SEX, label: false, required: false, placeholder: "Sexo" %>
                 <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: false, required: false,placeholder: "Tipo de sangre" %>
+                <!--% = f.input :height, label: false, required: false, placeholder: "Talla" % >
+                < % = f.input :weight, label: false, required: false, placeholder: "Peso" %-->
                 <%= f.input :existing_conditions, label: false, required: false, placeholder: "Enfermedades preexistentes" %>
                 <%= f.input :allergies, label: false, required: false, placeholder: "Alergias" %>  
                 <div class="form-actions text-center" >

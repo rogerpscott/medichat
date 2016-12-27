@@ -2,7 +2,7 @@
 <div class="container ">
   <section class="section-padding-20 ">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-sm-9">
         <div class="panel">
            <div class="title-panel">
               <div class="pull-left">
@@ -11,11 +11,11 @@
               <div class="pull-right">
                 <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, conversation_path(@conversation), remote: true, id: "refresh" %>
               </div>
-              <div class="clearfix"></div>
+              <div class="clearfix"></div>            
            </div>
           <% if @conversation.messages.any? %>
             <div class="panel-body" id="messages">
-              <%= render partial: 'messages/message', collection: @conversation.messages.reverse%>
+              <%= render partial: 'messages/message', collection: @conversation.messages%>
             </div>
           <%else%>
             <div class="panel-body hidden" id="messages"></div>
@@ -25,8 +25,8 @@
           <%= render partial: 'conversation_status', locals: {message: @message, conversation: @conversation} %>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="detail-user col-md-offset-2">
+      <div class="col-sm-3">
+        <div class="detail-user col-sm-offset-1">
           <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
           <strong>Conversando con el doctor</strong>
           <h3 class="doctor-title"><%= @conversation.doctor.doctor_profile.last_name %></h3>
@@ -34,21 +34,22 @@
             <span class="icon-status"> </span><span>ONLINE</span>
           </div>
           <div class="line-detail"></div>
-          <img src="/assets/ingresa-tus-datos-mediChat.png" alt="">
+          <%= image_tag "icono-paciente.png", :alt => "Paciente MediChat" %>
           <h3 class="paciente-title">Pedro Silva</h3>
           <strong>Paciente</strong>
         </div>
       </div>
-      <div class="col-md-12">
+      <div class="clearfix"></div>
+      <div class="col-sm-12">
         <div class="form-bottom">
-          <div class="col-md-8">
+          <div class="col-sm-9">
             <div class="form-message">
               <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-3">
             <div class="send-message">
-              <img src="/assets/attach.png" alt="Adjuntar archivo">
+              <a href="mailto:"><%= image_tag "attach.png", :alt => "Adjuntar archivo" %></a>
               <button id="btnSendMessage" class="btn btn-primary">Enviar</button>
             </div>
           </div>
@@ -61,6 +62,6 @@
       setInterval(function () {document.getElementById("refresh").click();}, 10000);
     </script>
   </section>
-</div>
+</div>  
 
 <%= render partial: 'pages/footer' %>

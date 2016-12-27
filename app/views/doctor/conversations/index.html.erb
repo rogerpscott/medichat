@@ -2,17 +2,17 @@
   <div class="row">
     <% if current_user.doctor_profile.available == false %>
       <div class="col-md-12 text-center unavailable">
-        <p class="wt">Estas actualmente en modo <strong>'No Disponible'</strong> entonces no puedes recibir chats. Para recibir chats cambia a modo <strong>Disponible</strong></p>
+        <p class="wt">Estás actualmente en modo <strong>'No Disponible'</strong> entonces no puedes recibir chats. Para recibir chats, cambia a modo <strong>Disponible</strong></p>
         <%= link_to 'Cambiar a Disponible', doctor_make_available_path, method: "post", class: 'btn btn-primary'%>
       </div>
     <% else %>
       <div class="col-md-12 text-center unavailable">
-        <p class="wt">Estas actualmente en modo <strong>'Disponible'</strong>. Para dejar de recibir nuevos chats cambia a modo <strong>'No Disponible'</strong>.</p>
+        <p class="wt">Estás actualmente en modo <strong>'Disponible'</strong>. Para dejar de recibir nuevos chats, cambia a modo <strong>'No Disponible'</strong>.</p>
         <%= link_to 'Cambiar a No Disponible', doctor_make_unavailable_path, method: "post", class: 'btn btn-primary' %>
       </div>
     <% end %>
 
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5" id="conversations">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-7" id="conversations">
       <div id="conversation-index">
         <div class="col-md-6">
           <h3>Pacientes No Atendidos</h3>
@@ -110,5 +110,4 @@ function sendNotifications() {
 setInterval(sendNotifications, 25000); // Every 1 second, the `refresh` function is called.
 
 </script>
-
 

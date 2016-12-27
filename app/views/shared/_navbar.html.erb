@@ -2,11 +2,11 @@
   <!-- Logo -->
   <% if current_user.instance_of?(Doctor) %>
     <%= link_to doctor_conversations_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "logo_medichat.png"%>
+      <%= image_tag "medichat-logo.png"%>
     <% end %>
   <% else %>
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "logo_medichat.png" %>
+      <%= image_tag "medichat-logo.png" %>
     <% end %>
   <% end %>
 
@@ -21,7 +21,7 @@
       <!-- Profile picture and dropdown -->
           <% if current_user.class == Patient %>
             <li class="navbar-wagon-item navbar-wagon-link"><%= link_to root_path do %>
-                 <%= t(".profile", default: "Início") %>
+                 <%= t(".profile", default: "Inicio") %>
               <% end %></li>
               <li class="navbar-wagon-item navbar-wagon-link"><%= link_to edit_patient_profile_path(current_user.patient_profile) do %>
                 <%= t(".profile", default: "Perfil") %>
@@ -31,7 +31,7 @@
               <% end %></li>
           <% end %>
           <li class="log-out"><%= link_to log_out_well_path do %>
-             <%= t(".sign_out", default: "Log out") %>
+             <%= t(".sign_out", default: "Cerrar sesión") %>
           <% end %></li>
 
         <% end %>
@@ -53,7 +53,7 @@
               </li>
               <li>
                 <%= link_to root_path do %>
-                  <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                  <i class="fa fa-home"></i>  <%= t(".profile", default: "Inicio") %>
                 <% end %>
               </li>
               <li>
@@ -64,7 +64,7 @@
             <% end %>
             <li>
               <%= link_to log_out_well_path do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Cerrar sesión") %>
               <% end %>
             </li>
       </ul>

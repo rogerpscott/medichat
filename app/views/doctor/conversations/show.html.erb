@@ -1,26 +1,57 @@
-<section class="section-padding-20 white-bg">
-  <div class="row col-md-8 col-md-offset-2">
-    <div class="col-md-8" id="<%= @conversation.access_token %>">
+<div class="white-bg">
+<div class="container">
+<section class="section-padding-20 white-bg conv-doctor">
+  <div class="row">
+    <div class="col-sm-9" id="<%= @conversation.access_token %>">
       <div class="panel">
         <div class="top-chat-d">
           <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
           <%= render partial: 'doctor/patient_profiles/show', locals: { conversation: @conversation, patient_profile: @conversation.patient.patient_profile}%>
           <% if @conversation.patient.conversations.length > 1 %>
+            <div class="chat-and-history" id="chat-history" onclick="changeWindowChat(this);">
+              <h2>Historial de Conversaciones </h2>
+              <%= image_tag "icono-historial.png", :alt => "Historial de Conversaciones",:class=>"historial-detail" %>
+            </div>
             <div class="patient-history">
-              <h3>Historial del paciente</h3>
-              <% @conversation.patient.conversations.each do |conversation| %>
-                <div>
-                  <p>Fecha: <%= conversation.created_at.to_date %> Diagnóstico: <%= conversation.diagnosis %> </p>
-                  <p>Resumen: <%= conversation.summary %></p>
-                </div>
-              <% end %>
+              <div class="content-history" id="content-history">
+                <% @conversation.patient.conversations.each do |conversation| %>
+                  <div class="item-history">
+                    <div class="top-historial">
+                      Noviembre <%= conversation.created_at.to_date %> 
+                    </div>  
+                    <div class="bottom-historial">
+                      <div class="pull-left left-img">
+                        <%= image_tag "icono-historial-doctor.png", :alt => "Doctro MediChat" %>
+                      </div>
+                      <div class="pull-right text-history">
+                        <div class="title-diag">
+                          <div class="pull-left">
+                            <h3>Doctor: Eduardo Perez</h3>
+                          </div>
+                          <div class="pull-right">
+                            <span>14:32pm</span>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="details-diag">
+                          <div>
+                            <p><strong>Diagnóstico:</strong> <%= conversation.diagnosis %> </p>
+                            <p><strong>Indicaciones:</strong> <%= conversation.summary %></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>
-
+        <div class="clearfix"></div>
         <% if @conversation.messages.any? %>
           <div class="panel-body" id="messages">
-            <%= render partial: 'doctor/messages/message', collection: @conversation.messages.reverse%>
+            <%= render partial: 'doctor/messages/message', collection: @conversation.messages%>
           </div>
         <%else%>
           <div class="panel-body hidden" id="messages">
@@ -28,8 +59,8 @@
         <%end%>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="detail-user col-md-offset-2">
+    <div class="col-sm-3">
+      <div class="detail-user col-md-offset-1">
         <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
         <strong>Conversando con el doctor</strong>
         <h3 class="doctor-title"><%= @conversation.doctor.doctor_profile.last_name %></h3>
@@ -37,22 +68,23 @@
           <span class="icon-status"> </span><span>ONLINE</span>
         </div>
         <div class="line-detail"></div>
-        <img src="/assets/ingresa-tus-datos-mediChat.png" alt="">
+        <%= image_tag "icono-doctor.png", :alt => "Doctor" %>
         <h3 class="paciente-title">Pedro Silva</h3>
         <strong>Paciente</strong>
       </div>
     </div>
     <div class="clearfix"></div>
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="form-bottom">
-        <div class="col-md-8">
+        <div class="col-sm-9">
           <div class="form-message">
             <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-3">
           <div class="send-message">
-            <img src="/assets/attach.png" alt="Adjuntar archivo">
+            <a href="mailto:">
+            <%= image_tag "attach.png", :alt => "Adjuntar archivo" %></a>
             <button id="btnSendMessage" class="btn btn-primary">Enviar</button>
           </div>
         </div>
@@ -62,6 +94,26 @@
     <div class="clearfix"></div>
   </div>
   <div class="clearfix"></div>
-</section>
+</section>  
+</div>
+</div>
 
+<script type="text/javascript">
+  console.log("historial-detail");
+  var btn = document.getElementById("chat-history");
+  var bandChat = true;
+  function changeWindowChat(btn){
+    var messages = document.getElementById("messages");
+    var history = document.getElementById("content-history");
+    if(bandChat){
+      messages.style = "display:none";
+      history.style = "display:block";
+      bandChat = false;
+    }else{
+      messages.style = "display:block";
+      history.style = "display:none";
+      bandChat = true;
+    }
+  }
+</script>
 <%= render partial: 'pages/footer' %>

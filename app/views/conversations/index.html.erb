@@ -1,14 +1,40 @@
-<div class="container historial">
-  <div class="row">
-    <div class="col-xs-12 patient-history">
-      <h3>Chats Anteriores</h3>
-      <% @conversations.each do |conversation| %>
-        <div>
-          <p>Fecha: <%= conversation.created_at.to_date %> Diagnóstico: <%= conversation.diagnosis %> </p>
-          <p>Resumen: <%= conversation.summary %></p>
-        </div>
-      <% end %>
-    </div>
+<div class="historial">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 patient-history">
+        <!--<h3>Chats Anteriores</h3>-->
+        <% @conversations.each do |conversation| %>
+          <div>
+            <div class="top-historial">
+              Noviembre <%= conversation.created_at.to_date %> 
+            </div>  
+            <div class="bottom-historial">
+              <div class="pull-left left-img">
+                <%= image_tag "icono-historial-paciente.png", :alt => "Doctor MediChat" %>
+              </div>
+              <div class="pull-right text-history">
+                <div class="title-diag">
+                  <div class="pull-left">
+                    <h3>Doctor: Eduardo Perez</h3>
+                  </div>
+                  <div class="pull-right">
+                    <span>14:32pm</span>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="details-diag">
+                  <div>
+                    <p><strong>Diagnóstico:</strong> <%= conversation.diagnosis %> </p>
+                    <p><strong>Indicaciones:</strong> <%= conversation.summary %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>    
   </div>
 </div>
 

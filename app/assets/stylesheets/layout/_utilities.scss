@@ -145,7 +145,7 @@ img {
   padding: 70px 0;
 }
 .section-padding-100 {
-  padding: 100px 0;
+  padding: 29px 0 40px;
 }
 /*==============================
   Preloader
@@ -277,7 +277,7 @@ sub {
 }
 .desktop-navigation li {
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 80px;
 }
 .desktop-navigation li a {
   display: block;
@@ -449,7 +449,7 @@ sub {
   width: 100%;
   padding-bottom: 100px;
   padding-top: 70px;
-  background: url("background_home.jpg") center center no-repeat transparent; 
+  background: image-url("background_home.jpg") center center no-repeat transparent; 
 }
 .home__title {
   display: table;
@@ -585,7 +585,7 @@ input.btn.btn-default {
   text-align: center;
   font-size: 28px;
   line-height: 28px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   font-weight: 500;
 }
 .view-all {
@@ -674,6 +674,7 @@ li .span-icon{
 .card-carousel .owl-dots {
   bottom: -30px;
 }
+
 /*==============================
   Card
 ==============================*/
@@ -721,6 +722,7 @@ li .span-icon{
 .service-card .box{
   max-width: 290px;
   padding: 10px;
+  text-align: center;
 }
 .service-card a {
   display: block;
@@ -732,7 +734,7 @@ li .span-icon{
 }
 .service-card p {
   font-size: 1.6rem;
-  text-align: justify;
+  text-align: center;
 }
 .service-card img.img-card {
     width: 70px;
@@ -748,9 +750,8 @@ li .span-icon{
   display: block;
   position: relative;
   font-size: 1.8rem;
-  text-transform: uppercase;
   margin: 5px 0;
-  height: 42px;
+  height: 24px;
 }
 .service-card h6 span {
   margin-right: 6px;
@@ -798,31 +799,89 @@ li .span-icon{
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
 }
 .about-medichat{
-  background: url("sobre-medichat.jpg") no-repeat center center;
+  background: image-url("sobre-medichat.jpg") repeat left bottom;
 }
 .about-medichat h2{
   color: #fff;
 }
 .about-medichat p.text-j{
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   text-align: justify;
 }
 .important-s p{
   font-size: 1.7rem;
   line-height: 3.4rem;
 }
+.chat-top{
+  color: #fff;
+}
+.chat-top-2{
+  color: #3F5760;
+}
+.chat-top-2:hover{
+  color: #3F5760;
+}
+.chat-top:hover{
+  color: #fff;
+}
+.btn-register{
+  background-color: #4EB5AB;
+  border-color: #4EB5AB;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+.btn-register:hover{
+  background-color: #4EB5AB;
+  border-color: #4EB5AB;
+}
+/***************/
+.slogan-paciente {
+  position: absolute;
+  right: 80px;
+  bottom: 60px;
+}
+.slogan-paciente > div{
+  background-color: rgba(78,181,171,0.9);
+  padding: 20px;
+  border-radius: 8px;
+  width: 498px;/*borrar*/
+}
+.slogan-paciente p{
+  margin: 0;
+  color: #fff;
+  font-size: 2.4rem;
+  letter-spacing: 2px;/*borrar*/
+}
+.slogan-paciente p:after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 15px solid rgba(0, 0, 0, 0);
+  border-top: 15px solid rgba(78,181,171,0.9);
+  border-left: 15px solid rgba(78,181,171,0.9);
+  border-bottom: 18px solid rgba(0, 0, 0, 0);
+  display: block;
+  position: absolute;
+  bottom: -33px;
+  left: 55px;
+}
 /* Article card */
 .article-card-gray {
+  max-width: 472px;
+  /*margin-top: 120px;*/
+}
+.article-card-gray > div{
   background-color: #4EB5AB;
   padding: 10px;
-  max-width: 470px;
   border-radius: 5px;
 }
 .article-card-gray p{
   margin: 0;
   color: #fff;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
 .article-card-gray p:after{
   content: "";
@@ -837,22 +896,25 @@ li .span-icon{
   bottom: -33px;
   left: 55px;
 }
-.article-card.center-b{
-  border-right: 5px solid #fff;
-  border-left: 5px solid #fff;
+.section3 .img-l{
+  display:none;
+}
+.section3 .col-xs-9.text-r{
+  width: 100%;
 }
 .article-card {
-  margin: 15px 0;
-  padding: 15px 20px 30px;
+  padding: 15px 0;
   text-align: center;
 }
 .article-card img{
   margin: 0 0 10px 0;
+  width: 90px;
 }
 .article-card p{
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 3rem;
+  margin-bottom:0;
 }
 .article-card .card-wrap .statistic {
   display: block;
@@ -891,15 +953,21 @@ li .span-icon{
 }
 /* ventajas */
 .ventajas{
-  background: url("ventajas-medichat.jpg") no-repeat center center;
+  background: image-url("ventajas-medichat.jpg") repeat left bottom;
 }
 .ventajas h2{
+  color: #fff;
+}
+.img-sobre{
+  margin-top:9px;
+}
+footer p{
   color: #fff;
 }
 /* FAQ card */
 .faq-card {
   background-color: rgba(12,124,118,0.6);
-  height: 250px;
+  height: auto;
   margin-top: 15px;
   margin-bottom: 15px;
   overflow: hidden;
@@ -907,14 +975,18 @@ li .span-icon{
   text-align: center;
 }
 .faq-card h3 {
-  font-size: 2.1rem;
+  font-size: 1.7rem;
   text-align: center;
   margin-bottom: 10px;
   font-weight: bold;
+  height: 35px;
+  margin-top: 15px;
 }
 .faq-card p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #fff;
+  padding-top: 10px;
+  display: block;
 }
 #como-funciona p strong {
   color: #4EB5AB;
@@ -927,16 +999,18 @@ li .span-icon{
   color: rgba(117,117,117,0.4);
 }
 .testimonial-card {
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 15px;
-  padding: 30px 0;
+  padding: 20px 0 30px;
   text-align: center;
 }
 .testimonial-card img {
-
+  max-width: 120px;
+  margin-bottom: 15px;
+  margin-top: 5px;
 }
 .testimonial-card h4 {
-  font-size: 24px;
+  font-size: 2rem;
   margin-bottom: 5px;
   margin-top: 10px;
   font-weight: 600;
@@ -950,7 +1024,7 @@ li .span-icon{
   font-size: 2rem;
 }
 .testimonial-card p {
-  padding: 15px 50px 0;
+  padding: 5px 20px 0;
   margin: 0;
   font-size: 1.6rem;
 }
@@ -1601,7 +1675,7 @@ li .span-icon{
   display: table;
   width: 100%;
   height: 100vh;
-  background: url("../img/other/404.jpg") no-repeat center center;
+  background: image-url("../img/other/404.jpg") no-repeat center center;
   background-size: cover;
 }
 .page-404__content {
@@ -1910,6 +1984,9 @@ li .span-icon{
 .section-padding-20 {
   padding: 20px 0 0 0;
 }
+.desktop-navigation li{
+  min-width: 139px;
+}
 .desktop-navigation li.log-out a {
   background-color: #465A64;
   padding: 10px;
@@ -1918,60 +1995,174 @@ li .span-icon{
   margin-bottom: 12px;
   border-radius: 5px;
   font-weight: normal;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+.desktop-navigation li.log-out a:hover{
+  border: 0 none;
+}
+.desktop-navigation li.log-out a:before{
+  background-color: #465A64;
 }
 .paciente{
   position: relative;
   width: 100%;
   padding-bottom: 100px;
   padding-top: 70px;
-  background: url("paciente.jpg") bottom right no-repeat transparent; 
+  background: image-url("paciente.jpg") bottom right no-repeat transparent; 
   height: 816px;
 }
 .doctor{
   position: relative;
   width: 100%;
-  padding-bottom: 100px;
-  padding-top: 70px;
-  background: url("doctor.jpg") center center no-repeat transparent;
-  min-height: 816px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background: image-url("doctor.jpg") bottom right repeat transparent;
 }
 .perfil{
   position: relative;
   width: 100%;
-  padding-bottom: 100px;
-  padding-top: 190px;
-  background: url("perfil.jpg") bottom center no-repeat transparent;
-  height: 816px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background: image-url("perfil.jpg") bottom center repeat transparent;
 }
 .diagnostico{
   position: relative;
   width: 100%;
   padding-bottom: 100px;
-  padding-top: 70px;
-  background: url("diagnostico.jpg") bottom center no-repeat transparent; 
+  padding-top: 160px;
+  background: image-url("diagnostico.jpg") bottom center no-repeat rgba(0, 0, 0, 0);
+  height: 816px;
 }
 .historial{
   width: 100%;
   padding-bottom: 100px;
-  padding-top: 190px;
+  padding-top: 50px;
   background-color: #fff;
-  height: 816px; 
+  min-height: 818px; 
 }
-.historial h3{
+.bottom-historial img{
+  max-width: 70px;
+  margin: 5px;
+}
+.bottom-historial h3 {
   color: #465A64;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.bottom-historial span {
+  color: #465A64;
+  font-weight: normal;
+}
+.bottom-historial strong{
+  color: #465A64;
+}
+.text-history{
+  width: 100%;
+}
+.bottom-historial .left-img{
+  padding: 0 20px;
+}
+.top-historial {
+  color: #465A64;
+  border-bottom: 1px solid #465A64;
+  padding: 5px 0;
+  margin-bottom: 20px;
+}
+.bottom-historial {
+  padding: 10px 0px 15px;
+}
+.details-diag{
+  padding: 10px 0;
+  border-bottom: 1px solid #465A64;
+}
+.details-diag > div{
+  max-width: 90%;
+}
+.details-diag p{
+  margin-bottom: 0;
+  line-height: 2.2rem;
 }
 .wt{
   font-size: 2rem;
   color: #fff;
 }
+.diagnostico h2{
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+  margin: 20px 0 40px;
+}
+.diagnostico label{
+  font-size: 2rem;
+}
+.diagnostico .form-horizontal .form-group{
+  margin-left: 0;
+  margin-right: 0;
+}
+.diagnostico input.btn-danger {
+  color: #fff;
+  background-color: #ec4844;
+  border-color: #ec4844;
+  font-weight: bold;
+  border-radius: 7px;
+}
+input[type="text"], textarea{
+  border-radius: 0;
+}
+.btn-danger{
+  background-color: #ec4844;
+  border-radius: 7px;
+  padding: 6px 18px;
+  font-weight: bold;
+}
+/****************************/
+.chat-and-history{
+  margin: 10px 0 0;
+  background-color: #465A64;
+  width: 100%;
+}
+.chat-and-history img{
+  display: inline-block;
+}
+.conv-doctor .chat-and-history h2{
+  background-color: #465A64;
+  margin: 0;
+  color: #fff;
+  padding: 10px;
+  font-size: 2rem;
+  text-align:left;
+  display: inline-block;
+}
+.conv-doctor .text-history{
+  width: 78%;
+}
+.conv-doctor .patient-history{
+  padding: 0;
+}
+.conv-doctor .patient-history .content-history{
+  background-color: #ADBCC5;
+  overflow-y: auto;
+  height: 430px;
+  display:none;
+}
+.conv-doctor .panel-body{
+  height: 430px;
+}
+
+.item-history{
+  padding: 20px;
+}
+/****************************/
 .paciente .btn-primary,.doctor .btn-primary {
-    background-color: #fff;
-    color: #4EB5AB;
-    border-color: #fff;
-    font-weight: bold;
-    font-size: 3rem;
-    border-radius: 7px;
-    box-shadow: 1px 3px 15px #465A64;
+  background-color: #fff;
+  color: #4EB5AB;
+  border-color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 7px;
+  box-shadow: 1px 3px 15px #465A64;
 }
 #conversation-index{
   margin-top: 20px;
@@ -2011,6 +2202,14 @@ li .span-icon{
   color: #3F5760;
   height: 100px;
 }
+.doctor-box-chat{
+  max-width: 75%;
+  float: right;
+}
+.patient-box-chat{
+  float: left;
+  max-width: 75%;
+}
 .doctor-text-chat{
   background-color: #ADBCC5;
   padding: 15px;
@@ -2019,6 +2218,7 @@ li .span-icon{
   display: inline-block;
   position: relative;
   min-width: 60px;
+  float: right;
 }
 .patient-text-chat{
   background-color: #80C8C2;
@@ -2028,6 +2228,7 @@ li .span-icon{
   display: inline-block;
   position: relative;
   min-width: 60px;
+  float: left;
 }
 p.patient-text-chat:after {
   content: "";
@@ -2056,27 +2257,29 @@ p.doctor-text-chat:after {
   right: 20px;
 }
 .send-message{
-  margin: 20px;
-  padding: 32px;
+  margin: 15px 0;
+  padding: 15px 0;
   text-align: center;
 }
 .send-message .btn{
   font-weight: bold;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
   background-color: #465A64;
   border-color: #465A64;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .send-message img {
-  padding: 0 10px;
-  margin: 0 10px;
+  padding: 0;
+  margin: 0;
+  width: 50px;
 }
 .detail-user {
   background-color: #ADBCC5;
   padding: 60px 20px;
   text-align: center;
   box-shadow: 2px 2px 10px #465A64;
+  display: none;
 }
 .doctor-title, .paciente-title{
   color: #465A64;
@@ -2129,13 +2332,19 @@ p.doctor-text-chat:after {
 }
 .panel-body{
   padding: 15px 0;
+  height: 583px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .top-d-c{
   background-color: #ADBCC5;
-  padding: 20px;
+  padding: 20px 0;
 }
 .top-d-c p{
   color: #465A64;
+  margin-bottom: 0;
+  line-height: 2.2rem;
+  font-size: 1.6rem;
 }
 .list-group .link-conversacion{
   border: 0 none;
@@ -2280,8 +2489,8 @@ input:focus {
 body {
   background-color: #4EB5AB;
 }
-p {
-  color: #757575;
+p{
+  color: #3F5760;
 }
 p a {
   color: #ef5350;
@@ -2396,7 +2605,7 @@ p a:hover {
   Content
 ==============================*/
 .section-title p {
-  color: #444;
+  color: #3F5760;
 }
 .pagination li a,
 .pagination li span {
@@ -2529,7 +2738,6 @@ p a:hover {
 .article-card--white .statistic li {
   color: #898989;
 }
-
 /* Team card */
 .team-card {
   background-color: #fff;
@@ -2768,3 +2976,99 @@ p a:hover {
   color: #03a9f4;
 }
 
+.section h2{
+  margin-bottom: 10px; 
+}
+
+.box-register{
+  margin-top: 10px;
+}
+/****************/
+
+/* @media (min-width: 320px) is default*/
+@media (min-width: 480px) {
+  .about-medichat{
+    background-repeat: no-repeat;
+  }
+  .paciente .btn-primary,.doctor .btn-primary {
+    font-size: 3rem;
+  }
+  .text-history{
+    width: 72%;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .article-card {
+    margin: 15px 0;
+    padding: 15px 30px 20px;
+  }
+  .section3 .img-l{
+    display: block;
+  }
+  .section3 .col-xs-9.text-r{
+    width: 75%;
+  }
+  .article-card img{
+    width: 120px;
+  }
+  .detail-user{
+    display: block;
+  }
+  .text-history{
+    width: 82%;
+  }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .article-card.center-b{
+    border-right: 5px solid #fff;
+    border-left: 5px solid #fff;
+  }
+  .section-padding-100 {
+    padding: 100px 0;
+  }
+  .section h2{
+    margin-bottom:25px;
+  }
+  .send-message{
+    margin: 20px;
+    padding: 32px 15px;
+  }
+  .send-message .btn{
+    padding: 5px 15px;
+    font-size: 2rem;
+  }
+  .send-message img {
+    padding: 0 10px;
+    margin: 0 10px;
+    width: auto;
+  }
+  .text-history{
+    width: 86%;
+  }
+  .perfil{
+    padding-bottom: 100px;
+    padding-top: 190px;
+    background-repeat:no-repeat;
+    height: 816px;
+  }
+  .doctor{
+    padding-bottom: 90px;
+    padding-top: 70px;
+    background-repeat: no-repeat;
+    min-height: 816px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .faq-card{
+    height: 235px;
+  }
+  .ventajas{
+    background-repeat: repeat;
+  }
+}
