@@ -3,6 +3,14 @@
   <section class="section-padding-20 ">
     <div class="row">
       <div class="col-sm-9">
+        <div class="info-detail text-center">
+          <div class="info-d">Conversando con el doctor</div>
+          <div class="cnt-span">
+          <span class="dname"><%= @conversation.doctor.doctor_profile.last_name %></span>
+          <span> | </span>
+          <span class="">CMP < % = @conversation.doctor.doctor_profile.cmp % ></span>
+          </div>
+        </div>
         <div class="panel">
            <div class="title-panel">
               <div class="pull-left">

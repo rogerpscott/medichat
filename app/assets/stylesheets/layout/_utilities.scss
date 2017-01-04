@@ -447,8 +447,8 @@ sub {
 .home {
   position: relative;
   width: 100%;
-  padding-bottom: 100px;
-  padding-top: 70px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   background: image-url("background_home.jpg") center center no-repeat transparent; 
 }
 .home__title {
@@ -462,7 +462,7 @@ sub {
   vertical-align: middle;
 }
 .home__text-wrap h1 {
-  font-size: 4.6rem;
+  font-size: 2.6rem;
   font-weight: bold;
   letter-spacing: 0.5px;
   vertical-align: top;
@@ -831,7 +831,7 @@ li .span-icon{
   border-radius: 15px;
   color: #fff;
   font-weight: bold;
-  padding: 5px 15px;
+  padding: 5px 8px;
 }
 .btn-register:hover{
   background-color: #4EB5AB;
@@ -840,20 +840,19 @@ li .span-icon{
 /***************/
 .slogan-paciente {
   position: absolute;
-  right: 80px;
+  right: 10px;
   bottom: 60px;
 }
 .slogan-paciente > div{
   background-color: rgba(78,181,171,0.9);
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
-  width: 498px;/*borrar*/
 }
 .slogan-paciente p{
   margin: 0;
   color: #fff;
-  font-size: 2.4rem;
-  letter-spacing: 2px;/*borrar*/
+  font-size: 1.6rem;
+  letter-spacing: 1.2px;
 }
 .slogan-paciente p:after{
   content: "";
@@ -2983,10 +2982,53 @@ p a:hover {
 .box-register{
   margin-top: 10px;
 }
+.bottom-title{
+  text-align: center;
+}
+.border-title{
+  display: inline-block;
+  border: 1px solid #fff;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.bottom-title .border-title p{
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 0px;
+}
+.info-detail{
+  background-color: #ADBCC5;
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  padding: 10px;
+  margin: 10px 0;
+}
+.info-d{
+  color: #fff;
+  font-weight: 500;
+}
+.cnt-span{
+  color: #465A64;
+  font-weight: bold;
+}
 /****************/
 
 /* @media (min-width: 320px) is default*/
 @media (min-width: 480px) {
+  .home {
+    padding-bottom: 30px;
+    padding-top: 70px;
+  }
+  .home__text-wrap h1{
+    font-size: 3.6rem;
+  }
+  .border-title{
+    margin-top: 70px;
+  }
+  .btn-register{
+    padding: 5px 15px;
+  }
   .about-medichat{
     background-repeat: no-repeat;
   }
@@ -2996,9 +3038,22 @@ p a:hover {
   .text-history{
     width: 72%;
   }
+
+  .slogan-paciente > div{
+    padding: 20px;
+  }
+  .slogan-paciente p{
+    font-size: 2.4rem;
+  }
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .info-detail{
+    display: none;
+  }
+  .home__text-wrap h1{
+    font-size: 4.6rem;
+  }
   .article-card {
     margin: 15px 0;
     padding: 15px 30px 20px;
@@ -3017,6 +3072,9 @@ p a:hover {
   }
   .text-history{
     width: 82%;
+  }
+  .slogan-paciente {
+    right: 80px;
   }
 
 }
