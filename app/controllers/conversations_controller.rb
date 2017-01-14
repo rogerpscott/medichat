@@ -9,6 +9,7 @@ class ConversationsController < ApplicationController
 
   def new
     @conversation = Conversation.new
+    @patient_profile = current_user.patient_profile
   end
 
 

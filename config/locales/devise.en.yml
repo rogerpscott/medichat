@@ -9,7 +9,7 @@ en:
     failure:
       already_authenticated: "Ya estás logeado."
       inactive: "Tu cuenta aun no esta activa."
-      invalid: "Invalido %{authentication_keys} o contraseña."
+      invalid: "Correo electrónico no reconocido, envíe un mensaje a soporte@medichatonline.com"
       locked: "Tu cuenta está bajo llave."
       last_attempt: "Tienes una oportunidad mas, despues tu cuenta será blockeada."
       not_found_in_database: "Invalido %{authentication_keys} o contraseña."

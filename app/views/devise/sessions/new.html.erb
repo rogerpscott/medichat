@@ -1,11 +1,10 @@
 
   <section id="top" class="home" data-parallax="scroll">
-    <div class="col-xs-offset-1 col-xs-10 col-md-4 home__title">
+    <div class="col-xs-offset-1 col-xs-10 col-md-6 home__title">
       <div class="home__text-wrap">
         <!-- Title -->
-        <h1>Obtén Orientación Médica <span>de calidad, rápida y amigable</span></h1>
+        <h1>Obtén Orientación Médica <span class="cali">de calidad</span></h1>
         <p class="text-m">Comienza a disfrutar la experiencia MediChat </p>
-        <p class="text-p">Para iniciar un chat con un doctor necesitas registrarte</p>
         <div id="background-form">
         <h2>Inicia sesión</h2>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
@@ -16,19 +15,13 @@
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Inicia sesión" %>
-            <%= f.button :button, "Registrate", :class=>"btn btn-register" %>
+            <%= f.button :button, "Regístrate", :class=>"btn btn-register" %>
           </div>
           <% end %>
         </div>
       </div>
     </div>
     <div class="clearfix"></div>
-    <div class="bottom-title">
-      <div class="border-title">
-        <p>MediChat no ofrece la atención de emergencias ni de urgencias médicas, nuestros doctores únicamente ofrecen orientación médica preliminar.</p>
-        <p>En caso usted sospeche tener una emergencia o urgencia médica, por favor acerquese al establecimiento de salud más cercano.</p>
-      </div>
-    </div>
   </section>
 
   <!-- Sobre medichat Section -->
@@ -37,7 +30,7 @@
       <div class="row">
         <h2>Somos MediChat <strong>Orientación Médica Online</strong> <span></span></h2>
         <p class="text-center">Evolución médica a través de la tecnología:<br/>
-        Conversa con nuestro staff médico de calidad <br/>
+        Conversa con nuestro staff médico de calidad, <br/>
         en tiempo real vía <strong>online 24/7.</strong></p>
       </div>
     </div>
@@ -63,7 +56,7 @@
               <%= image_tag "sobre-medichat.png", :alt => "Sobre MediChat", :class=>"img-card" %>
             </div>
             <div class="pull-left box">
-              <a href="#sobre-medichat">Sobre Medichat</a>
+              <a href="#sobre-medichat">Sobre MediChat</a>
               <h6>Evolución médica</h6>
               <p>Plataforma médica que nace para cubrir la creciente demanda médica en la internet.</p>
             </div>
@@ -96,7 +89,7 @@
               <%= image_tag "ventajas-medichat.png", :alt => "Ventajas MediChat", :class=>"img-card" %>
             </div>
             <div class="pull-left box">
-              <a href="#ventajas">Ventajas de Medichat</a>
+              <a href="#ventajas">Ventajas de MediChat</a>
               <h6>Ahorra tiempo y dinero</h6>
               <p>En MediChat recibe orientación médica 24/7, ayudando a evitar la automedicación.</p>
             </div>

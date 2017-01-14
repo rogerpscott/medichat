@@ -73,8 +73,9 @@ ActiveRecord::Schema.define(version: 20160907233445) do
     t.text     "allergies"
     t.integer  "height"
     t.integer  "weight"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.boolean  "terms",               default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "users", force: :cascade do |t|

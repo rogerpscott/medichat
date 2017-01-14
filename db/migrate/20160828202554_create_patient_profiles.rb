@@ -13,6 +13,7 @@ class CreatePatientProfiles < ActiveRecord::Migration[5.0]
       t.text :allergies
       t.integer :height
       t.integer :weight
+      t.boolean :terms, default: false
 
       t.timestamps
     end

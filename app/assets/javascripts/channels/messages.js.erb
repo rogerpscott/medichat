@@ -12,6 +12,7 @@ if ($('#kapor').text().length) {
         var options = {
           body: data.message,
           tag: data.user,
+          icon: "<%= asset_path('sobre.png') %>",
           requireInteraction: true
         };
         Notification.requestPermission(function() {

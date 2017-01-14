@@ -8,7 +8,7 @@
           <div class="cnt-span">
           <span class="dname"><%= @conversation.doctor.doctor_profile.last_name %></span>
           <span> | </span>
-          <span class="">CMP < % = @conversation.doctor.doctor_profile.cmp % ></span>
+          <span class="">CMP <%= @conversation.doctor.doctor_profile.cmp %></span>
           </div>
         </div>
         <div class="panel">
@@ -22,7 +22,7 @@
                     </script>
                   </strong>
               </div>
-              <div class="pull-right">
+              <div class="pull-right hide">
                 <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, conversation_path(@conversation), remote: true, id: "refresh" %>
               </div>
               <div class="clearfix"></div>
@@ -44,13 +44,13 @@
           <p id="kapor" class="hidden"><%= @conversation.access_token %></p>
           <strong>Conversando con el doctor</strong>
           <h3 class="doctor-title"><%= @conversation.doctor.doctor_profile.last_name %></h3>
-          <h3 class="doctor-title"><%= @conversation.doctor.doctor_profile.cmp %></h3>
+          <h3 class="doctor-title-min">CMP <%= @conversation.doctor.doctor_profile.cmp %></h3>
           <div class="status-user">
             <span class="icon-status"> </span><span>ONLINE</span>
           </div>
           <div class="line-detail"></div>
           <%= image_tag "icono-paciente.png", :alt => "Paciente MediChat" %>
-          <h3 class="paciente-title">Pedro Silva</h3>
+          <h3 class="paciente-title"><%= @conversation.patient.patient_profile.first_name %> <%= @conversation.patient.patient_profile.last_name %></h3>
           <strong>Paciente</strong>
         </div>
       </div>

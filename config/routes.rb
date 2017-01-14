@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   resources :conversations, param: :access_token
   resources :messages
   resources :patient_profiles, only: [:edit, :update]
+  resources :pages
+  resources :patient_profiles do
+    member do
+      post 'accept_terms'
+    end
+  end
 
   namespace :doctor do
     resources :conversations, param: :access_token

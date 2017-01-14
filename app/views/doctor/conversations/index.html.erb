@@ -77,8 +77,9 @@ function loopNotifications(array){
       var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
       var title = "Nueva Conversación";
       var options = {
-        body: "Tienes un mensaje de un nuevo paciente",
+        body: "Tienes un mensaje de un paciente nuevo",
         tag: 'custom',
+        icon: "<%= asset_path('sobre.png') %>",
         requireInteraction: true
       };
       Notification.requestPermission(function() {

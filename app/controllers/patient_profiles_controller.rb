@@ -12,9 +12,19 @@ class PatientProfilesController < ApplicationController
     end
   end
 
+  def accept_terms
+    @patient_profile = current_user.patient_profile
+    @patient_profile.update(patient_profile_params)
+    if @patient_profile.terms == true
+      redirect_to edit_patient_profile_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def patient_profile_params
-    params.require(:patient_profile).permit(:first_name, :last_name, :dni, :phone, :age, :sex, :blood_type, :existing_conditions, :allergies, :height, :weight)
+    params.require(:patient_profile).permit(:first_name, :last_name, :dni, :phone, :age, :sex, :blood_type, :existing_conditions, :allergies, :height, :weight, :terms)
   end
 end

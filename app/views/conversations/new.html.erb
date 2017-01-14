@@ -1,9 +1,27 @@
 <div class="container padded paciente">
   <div class="row">
     <section class=" ">
+    <% if current_user.patient_profile.terms == true %>
       <div class="text-center">
       	<%= link_to "Iniciar chat con un doctor", conversations_path, method: 'post', class: 'btn btn-primary' %>
     	</div>
+      <div class="text-center">
+    <% else %>
+        <div class="text-ter">
+          <h2>Importante</h2>
+          <div class="text-cont">
+            <p>Marcando esta casilla declaro conocer y aceptar los términos y condiciones de MediChat, en los cuales se destaca que MediChat no ofrece la atención de emergencias ni de urgencias médicas. Los doctores de MediChat únicamente ofrecen orientación médica preliminar basada en la comunicación de síntomas por parte de sus afiliados y no prescriben medicamentos que requieran una receta médica para ser vendidos. En caso usted sospeche tener una emergencia o urgencia médica, por favor acérquese al establecimiento de salud más cercano a la brevedad posible.</p>
+          </div>
+          <div>
+             <%= simple_form_for @patient_profile, :url => accept_terms_patient_profile_path(@patient_profile), :method => :post do |f| %>
+             <span>Acepto los <%= link_to "Terminos y condiciones", pages_path %></span>
+              <%= f.input :terms, label: false, as: :boolean, checked_value: true, unchecked_value: false %>
+              <%= f.button :submit, "Actualizar mi perfil para chatear con un Doctor" %>
+            <% end %>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+      <% end %>
     	<div class="slogan-paciente">
         <div class="">
           <p>Para tener una mejor atención, <br/>actualiza tus datos en Perfil</p>
