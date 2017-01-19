@@ -17,8 +17,10 @@
                 <% @conversation.patient.conversations.each do |conversation| %>
                   <div class="item-history">
                     <div class="top-historial">
-                      Noviembre <%= conversation.created_at.to_date %> 
-                    </div>  
+                      <% t = conversation.created_at %>
+                      <% meses = ["bob","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]%>
+                      <%= t.strftime("%d")+ " de " + meses[t.strftime("%m").to_i] + " de " + t.strftime("%Y") %>
+                    </div>
                     <div class="bottom-historial">
                       <div class="pull-left left-img">
                         <%= image_tag "icono-historial-doctor.png", :alt => "Doctro MediChat" %>
@@ -26,10 +28,10 @@
                       <div class="pull-right text-history">
                         <div class="title-diag">
                           <div class="pull-left">
-                            <h3>Doctor: Eduardo Perez</h3>
+                            <h3>Doctor: Dr. <%= conversation.doctor.doctor_profile.last_name %></h3>
                           </div>
                           <div class="pull-right">
-                            <span>14:32pm</span>
+                            <span><%= t.strftime('%R') %></span>
                           </div>
                           <div class="clearfix"></div>
                         </div>
@@ -95,7 +97,7 @@
     <div class="clearfix"></div>
   </div>
   <div class="clearfix"></div>
-</section>  
+</section>
 </div>
 </div>
 

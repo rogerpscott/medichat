@@ -14,9 +14,9 @@
           </div>
           <div>
              <%= simple_form_for @patient_profile, :url => accept_terms_patient_profile_path(@patient_profile), :method => :post do |f| %>
-             <span>Acepto los <%= link_to "Terminos y condiciones", pages_path %></span>
+             <span style="font-size: 15px;position: absolute; margin: 14px 0 0 17px;">Acepto los <%= link_to "Terminos y condiciones", pages_path %></span>
               <%= f.input :terms, label: false, as: :boolean, checked_value: true, unchecked_value: false %>
-              <%= f.button :submit, "Actualizar mi perfil para chatear con un Doctor" %>
+              <%= f.button :submit, "Continuar" %>
             <% end %>
           </div>
           <div class="clearfix"></div>

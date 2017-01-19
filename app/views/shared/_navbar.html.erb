@@ -23,12 +23,14 @@
             <li class="navbar-wagon-item navbar-wagon-link"><%= link_to root_path do %>
                  <%= t(".profile", default: "Inicio") %>
               <% end %></li>
-              <li class="navbar-wagon-item navbar-wagon-link"><%= link_to edit_patient_profile_path(current_user.patient_profile) do %>
-                <%= t(".profile", default: "Perfil") %>
-              <% end %></li>
-              <li class="navbar-wagon-item navbar-wagon-link"><%= link_to conversations_path do %>
-                 <%= t(".profile", default: "Historial") %>
-              <% end %></li>
+              <% if current_user.patient_profile.terms == true %>
+                <li class="navbar-wagon-item navbar-wagon-link"><%= link_to edit_patient_profile_path(current_user.patient_profile) do %>
+                  <%= t(".profile", default: "Perfil") %>
+                <% end %></li>
+                <li class="navbar-wagon-item navbar-wagon-link"><%= link_to conversations_path do %>
+                   <%= t(".profile", default: "Historial") %>
+                <% end %></li>
+              <% end %>
           <% end %>
           <li class="log-out"><%= link_to log_out_well_path do %>
              <%= t(".sign_out", default: "Cerrar sesión") %>

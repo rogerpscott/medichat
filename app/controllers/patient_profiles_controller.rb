@@ -15,11 +15,7 @@ class PatientProfilesController < ApplicationController
   def accept_terms
     @patient_profile = current_user.patient_profile
     @patient_profile.update(patient_profile_params)
-    if @patient_profile.terms == true
-      redirect_to edit_patient_profile_path
-    else
-      redirect_to root_path
-    end
+    redirect_to root_path
   end
 
   private
