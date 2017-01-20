@@ -4,7 +4,7 @@
       <div id="background-form">
         <%= simple_form_for @patient_profile do |f| %>
         <div class=" row form-inputs">
-            <div class="col-md-6 box-register">
+            <div class="col-md-5 box-register">
               <div class="bg-white">
                 <div><h2>Registro</h2></div>
                 <%= f.input :first_name, label: false, required: false, autofocus: true, placeholder: "Nombre" %>
@@ -16,7 +16,7 @@
               </div>
 
             </div>
-            <div class="col-md-6 box-register">
+            <div class="col-md-5 box-register">
               <div class="bg-white">
                 <%= f.input :sex, collection: PatientProfile::SEX, label: false, required: false, placeholder: "Sexo" %>
                 <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: false, required: false,placeholder: "Tipo de sangre" %>

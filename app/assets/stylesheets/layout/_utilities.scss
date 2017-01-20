@@ -71,7 +71,7 @@ Primary use:  HelpZone Template
 html,
 body {
   height: 100%;
-  font-size:62.5%;
+  font-size:52.5%;
 }
 a {
   -webkit-transition: color 0.2s ease;
@@ -107,7 +107,7 @@ textarea:focus {
   outline: none;
 }
 input[type="text"] {
-  height: 42px;
+  height: 30px;
   padding: 0 15px;
 }
 textarea {
@@ -186,7 +186,6 @@ body {
   /*font-family: 'Roboto', sans-serif;*/
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
-  font-size: 14px;
   color: #fff;
 }
 h1,
@@ -968,7 +967,7 @@ footer p{
 /* FAQ card */
 .faq-card {
   background-color: rgba(12,124,118,0.6);
-  height: auto;
+  height: 215px;
   margin-top: 15px;
   margin-bottom: 15px;
   overflow: hidden;
@@ -1086,7 +1085,7 @@ footer p{
 ==============================*/
 .footer {
   position: relative;
-  padding: 20px 0;
+  padding: 5px 0;
 }
 .footer__copyright small {
   line-height: 26px;
@@ -1986,7 +1985,7 @@ footer p{
   padding: 20px 0 0 0;
 }
 .desktop-navigation li{
-  min-width: 139px;
+  min-width: 100px;
 }
 .desktop-navigation li.log-out a {
   background-color: #465A64;
@@ -1997,7 +1996,7 @@ footer p{
   border-radius: 5px;
   font-weight: normal;
   position: absolute;
-  top: 25px;
+  top: 12px;
   right: 20px;
 }
 .desktop-navigation li.log-out a:hover{
@@ -2012,7 +2011,7 @@ footer p{
   padding-bottom: 100px;
   padding-top: 70px;
   background: image-url("paciente.jpg") bottom right no-repeat transparent; 
-  height: 816px;
+  height: 554px;
 }
 .doctor{
   position: relative;
@@ -2020,6 +2019,7 @@ footer p{
   padding-bottom: 20px;
   padding-top: 20px;
   background: image-url("doctor.jpg") bottom right repeat transparent;
+  min-height: 554px;
 }
 .perfil{
   position: relative;
@@ -2169,7 +2169,7 @@ input[type="text"], textarea{
   margin-top: 20px;
 }
 #conversation-index h3{
-  font-size: 2.8rem;
+  font-size: 2.1rem;
   font-weight: bold;
   text-align: center;
 }
@@ -2185,23 +2185,42 @@ input[type="text"], textarea{
 .form-bottom{
   background-color: #ADBCC5;
   margin: 10px 0 0 0;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+}
+.form-bottom .fchat1{
+  float: left;
+  width: 169px;
+  padding: 0;
+}
+.form-bottom .fchat2{
+  float: left;  
 }
 .form-message {
+  margin: 5px 0 0;
   background-color: #ADBCC5;
-  padding: 25px;
+  padding: 15px;
   color: #3F5760;
 }
-#messages strong{
-  background-color: rgba(0, 0, 0, 0);
-  color: #3F5760;
-  font-size: 2rem;
+.panel-body{
+  padding: 15px 0 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
+  height: 302px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 45px;
 }
 #message_content{
   border: 1px solid #fff;
   background-color: #fff;
   border-radius: 5px;
   color: #3F5760;
-  height: 100px;
+  height: 50px;
+}
+#messages strong{
+  background-color: rgba(0, 0, 0, 0);
+  color: #3F5760;
+  font-size: 2rem;
 }
 .doctor-box-chat{
   max-width: 75%;
@@ -2352,8 +2371,9 @@ p.doctor-text-chat:after {
   margin: 0 10px;
 }
 .detail-user img {
-  margin: 20px auto;
+  margin: 10px auto;
   display: inline-block;
+  width: 105px;
 }
 .status-user span {
   line-height: 3.2rem;
@@ -2373,12 +2393,6 @@ p.doctor-text-chat:after {
 }
 .panel{
   box-shadow: none;
-}
-.panel-body{
-  padding: 15px 0;
-  height: 440px;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 .top-d-c{
   background-color: #ADBCC5;
@@ -3092,18 +3106,12 @@ p a:hover {
   .about-medichat{
     background-repeat: no-repeat;
   }
-  .paciente .btn-primary,.doctor .btn-primary {
-    font-size: 3rem;
-  }
   .text-history{
     width: 72%;
   }
 
   .slogan-paciente > div{
-    padding: 20px;
-  }
-  .slogan-paciente p{
-    font-size: 2.4rem;
+    padding: 10px;
   }
   .text-ter {
     margin: 40px auto 0;
@@ -3116,14 +3124,53 @@ p a:hover {
   .article-card-gray p{
     font-size: 1.8rem;
   }
+  .form-bottom{
+
+  }
+  .form-bottom .fchat1{
+    width: 410px;
+  }             
+  .form-bottom .fchat2{
+ 
+  }
+  .form-message {
+
+  }
   .panel-body{
-    height: 583px;
+    height: 154px;
+  }
+  #message_content{
+    height: 45px;
   }
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .form-bottom{
+    position: relative;
+  }
+  .form-bottom .fchat1{
+    width: 75%;
+  }
+  .form-bottom .fchat2{
+     
+  }
+  .form-message {
+    margin: 5px 0 0;
+    padding: 15px;
+  }
+  .panel-body{
+    height: 345px;
+    margin-bottom: 10px;
+  }
+  #message_content{
+    height: 100px;
+  }
+  
+  .conv-doctor .panel-body {
+      height: 246px;
+  }
   .bg-white{
-    min-height: 464px;
+    min-height: 304px;
   }
   section h2 {
     font-size: 5rem;
@@ -3146,7 +3193,7 @@ p a:hover {
       width: 70px;
   }
   .testimonial-card img {
-    max-width: 120px;
+    max-width: 80px;
   }
   .info-detail{
     display: none;
@@ -3171,7 +3218,7 @@ p a:hover {
     width: 75%;
   }
   .article-card img{
-    width: 120px;
+    width: 80px;
   }
   .detail-user{
     display: block;
@@ -3198,14 +3245,17 @@ p a:hover {
   }
   /* Navbar logo */
   .navbar-wagon-brand img {
-      width: 200px;
-      margin: 0;
+    width: 180px;
+    margin: 0;
   }
   .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 26px;
   }
   .send-message img {
     width: 49px;
+  }
+  .panel-body{
+    height: 396px;
   }
 }
 
@@ -3222,8 +3272,8 @@ p a:hover {
     margin-bottom:25px;
   }
   .send-message{
-    margin: 20px;
-    padding: 32px 15px;
+    margin: 20px 15px 0;
+    padding: 25px 0px;
   }
   .send-message .btn{
     padding: 5px 15px;
@@ -3237,6 +3287,67 @@ p a:hover {
   .text-history{
     width: 86%;
   }
+  .text-ter {
+    width: 820px;
+  }
+  .service-card {
+    width: auto;
+  }
+  .service-card h6{
+    height: 24px;
+  }
+  .perfil{
+    height: 554px;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+      width: 1020px;
+  }
+}
+/* Large devices (large desktops, 1600px and up) */
+@media (min-width: 1600px) {
+  html,
+  body {
+    font-size: 62.5%;
+  }
+  .container {
+    width: 1170px;
+  }
+  .faq-card{
+    height: 235px;
+  }
+  .ventajas{
+    background-repeat: repeat;
+  }
+  .text-ter {
+    width: 990px;
+  }
+  .paciente{
+    height: 816px;
+  }
+  .paciente .btn-primary, .doctor .btn-primary {
+    font-size: 3rem;
+  }
+  .navbar-wagon-brand img {
+    width: 200px;
+  }
+  .desktop-navigation li{
+    min-width: 139px;
+  }
+  .slogan-paciente p{
+    font-size: 2.4rem;
+  }
+  .footer {
+    padding: 20px 0;
+  }
+  .navbar-wagon{
+    padding: 0px 30px;
+  }
+  .desktop-navigation li.log-out a {
+    top: 25px;
+  }
   .perfil{
     padding-bottom: 100px;
     padding-top: 190px;
@@ -3249,26 +3360,39 @@ p a:hover {
     background-repeat: no-repeat;
     min-height: 816px;
   }
-  .text-ter {
-    width: 820px;
+  input[type="text"] {
+    height: 42px;
   }
-  .service-card {
+  .form-group{
+    margin-bottom: 30px;
+  }
+  .article-card img{
+    width: 120px;
+  }
+  .testimonial-card img {
+    max-width: 120px;
+  }
+  .bg-white{
+    min-height: 504px;
+  }
+  #conversation-index h3{
+    font-size: 2.8rem;
+  }
+  .slogan-paciente > div{
+    padding: 20px;
+  }
+  .send-message{
+    margin: 20px;
+    padding: 32px 15px;
+  }
+  .detail-user img {
+    margin: 20px auto;
     width: auto;
   }
-  .service-card h6{
-    height: 24px;
+  .form-message {
+    padding: 25px;
   }
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .faq-card{
-    height: 235px;
-  }
-  .ventajas{
-    background-repeat: repeat;
-  }
-  .text-ter {
-    width: 990px;
+  .panel-body{
+    height: 583px;
   }
 }
