@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'patient_profiles/update'
 
-  devise_for :users
+  devise_for :users, path_names: {
+  sign_up: ''
+}
   root to: 'conversations#new'
   mount ActionCable.server => '/cable'
   resources :conversations, param: :access_token

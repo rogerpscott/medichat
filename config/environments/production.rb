@@ -6,7 +6,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   config.web_socket_server_url = "wss://medichat-peru2.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://medichat-peru2.herokuapp.com', 'http://medichat-peru2.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://medichat-peru2.herokuapp.com', 'http://medichat-peru2.herokuapp.com', 'http://medichatonline.com/']
 
 
   # Eager load code on boot. This eager loads most of Rails and
