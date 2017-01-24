@@ -119,9 +119,9 @@
     }
   }
 
-  document.querySelector('.panel-body').addEventListener("DOMSubtreeModified", handler, true);
+  document.querySelector('.panel-body').addEventListener("DOMSubtreeModified", changeSize, true);
 
-  function handler(){
+  function changeSize(){
     var chatBox = document.querySelector('.panel-body');
     chatBox.scrollTop = chatBox.scrollHeight;
   }

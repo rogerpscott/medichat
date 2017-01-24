@@ -53,7 +53,7 @@ class ConversationsController < ApplicationController
     @conversation.update(conversation_params)
     @conversation.status = "closed"
     if @conversation.diagnosis.length < 5 or @conversation.summary.length < 5
-      flash[:alert] = "Mínimo 5 carácteres"
+      flash[:alert] = "Todos los campos deben ser completados"
       redirect_to edit_doctor_conversation_path(@conversation)
     else
       @conversation.save
