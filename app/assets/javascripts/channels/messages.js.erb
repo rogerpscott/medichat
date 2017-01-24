@@ -6,7 +6,7 @@ if ($('#kapor').text().length) {
       return $('#messages').not(".hidden #messages").append(this.renderMessage(data));
     },
     renderMessage: function(data) {
-    if(window.location.href.indexOf("doctor") > 0) {
+      if(window.location.href.indexOf("doctor") > 0) {
         var notificationEvents = ['onclick', 'onshow', 'onerror', 'onclose'];
         var title = data.user + " mandó un mensaje";
         var options = {
@@ -34,6 +34,7 @@ if ($('#kapor').text().length) {
           }
         });
       }
+
       if (data.user.substring(0,3) == "Dr.") {
         return '<div class="item-chat"><div class="doctor-box-chat"><div class="pull-right"><strong>'+ data.user +' - Doctor </strong><div><p class="doctor-text-chat"> '+ data.message +'</p></div></div><div class="clearfix"></div></div><div class="clearfix"></div></div>';
       }

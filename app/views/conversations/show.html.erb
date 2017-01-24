@@ -1,6 +1,6 @@
 <div class="white-bg">
 <div class="container ">
-  <section class="section-padding-20 ">
+  <section class="section-padding-20 conv-paciente">
     <div class="row">
       <div class="col-sm-9">
         <div class="info-detail text-center">
@@ -79,4 +79,12 @@
   </section>
 </div>
 
+<script type="text/javascript">
+  document.querySelector('.panel-body').addEventListener("DOMSubtreeModified", changeSize, true);
+
+  function changeSize(){
+    var chatBox = document.querySelector('.panel-body');
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+</script>
 <%= render partial: 'pages/footer' %>

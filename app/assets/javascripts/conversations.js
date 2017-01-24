@@ -17,10 +17,10 @@ $(document).ready( function() {
 function submitNewMessage(){
   $('textarea#message_content').not(".hidden textarea").unbind('keydown').keydown(function(event) {
     if (event.keyCode == 13) {
-        $('[data-send="message"]').click();
-        $('[data-textarea="message"]').val(" ")
-        return false;
-     }
+      $('[data-send="message"]').click();
+      $('[data-textarea="message"]').val(" ");
+      return false;
+    }
   });
 }
 

@@ -2070,6 +2070,7 @@ footer p{
   border-bottom: 1px solid #465A64;
   padding: 5px 0;
   margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 .bottom-historial {
   padding: 10px 0px 15px;
@@ -2145,11 +2146,11 @@ input[type="text"], textarea{
 .conv-doctor .patient-history .content-history{
   background-color: #ADBCC5;
   overflow-y: auto;
-  height: 390px;
+  height: 242px;
   display:none;
 }
 .conv-doctor .panel-body{
-  height: 350px;
+  height: 235px;
 }
 
 .item-history{
@@ -3076,6 +3077,30 @@ p a:hover {
     width: 150px;
     margin: 5px auto 0;
 }
+a.btn.btn-default {
+    background-color: #4EB5AB;
+    border-color: #4EB5AB;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+.closeT{
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.conv-doctor .panel{
+  height: 435px;
+  margin-bottom: 0;
+}
+.conv-paciente .panel{
+  height: 327px; 
+}
+.top-chat-d{
+  height: 78px;
+  overflow-y: auto;
+}
 /****************/
 
 /* @media (min-width: 320px) is default*/
@@ -3145,6 +3170,16 @@ p a:hover {
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .conv-doctor .panel{
+    height: auto;
+  }
+  .conv-paciente .panel{
+    height: auto; 
+  }
+  .top-chat-d{
+    height: auto;
+    overflow-y: none;
+  }
   .form-bottom{
     position: relative;
   }
@@ -3158,19 +3193,11 @@ p a:hover {
     margin: 5px 0 0;
     padding: 15px;
   }
-  .panel-body{
-    height: 345px;
-    margin-bottom: 10px;
-  }
   #message_content{
     height: 100px;
   }
-  
-  .conv-doctor .panel-body {
-      height: 246px;
-  }
   .bg-white{
-    min-height: 304px;
+    min-height: 430px;
   }
   section h2 {
     font-size: 5rem;
@@ -3230,7 +3257,7 @@ p a:hover {
     right: 80px;
   }
   .text-ter {
-    margin: 50px auto 0;
+    margin: 20px auto 0;
     width: 700px;
   }
   .service-card {
@@ -3249,13 +3276,14 @@ p a:hover {
     margin: 0;
   }
   .form-group {
-    margin-bottom: 26px;
+    margin-bottom: 10px;
   }
   .send-message img {
     width: 49px;
   }
   .panel-body{
     height: 396px;
+    margin-bottom: 10px;
   }
 }
 
@@ -3394,5 +3422,8 @@ p a:hover {
   }
   .panel-body{
     height: 583px;
+  }
+  .form-group {
+    margin-bottom: 20px;
   }
 }

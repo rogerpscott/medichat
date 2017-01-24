@@ -79,12 +79,12 @@
     <div class="clearfix"></div>
     <div class="col-sm-12">
       <div class="form-bottom">
-        <div class="col-sm-9">
+        <div class="col-sm-9 fchat1">
           <div class="form-message">
             <%= render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}%>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 fchat2">
           <div class="send-message">
             <a href="mailto:">
             <%= image_tag "attach.png", :alt => "Adjuntar archivo" %></a>
@@ -117,6 +117,13 @@
       history.style = "display:none";
       bandChat = true;
     }
+  }
+
+  document.querySelector('.panel-body').addEventListener("DOMSubtreeModified", handler, true);
+
+  function handler(){
+    var chatBox = document.querySelector('.panel-body');
+    chatBox.scrollTop = chatBox.scrollHeight;
   }
 </script>
 <%= render partial: 'pages/footer' %>

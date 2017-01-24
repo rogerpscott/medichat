@@ -6,7 +6,7 @@
 	  <p><strong>Enfermedades pre-existentes:</strong> <%= patient_profile.existing_conditions %></p>
 	</div>
 	<div class="col-md-6">
-		<div class="pull-right"><%= link_to "Terminar", edit_doctor_conversation_path, {class: "btn btn-danger"} %></div>
+		<%= link_to "Terminar", edit_doctor_conversation_path, {class: "btn btn-danger closeT"} %>
 		<div class="clearfix"></div>
 		<p><strong>Edad:</strong> <%= patient_profile.age %> </p>
 		<p><strong>Tipo de Sangre:</strong> <%= patient_profile.blood_type %></p>
