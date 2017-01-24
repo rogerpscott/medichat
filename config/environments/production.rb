@@ -4,9 +4,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  action_cable.disable_request_forgery_protection = true
-  config.web_socket_server_url = "wss://medichatonline.com/cable"
-  config.action_cable.allowed_request_origins = ['https://medichat-peru2.herokuapp.com', 'http://medichat-peru2.herokuapp.com', 'http://medichatonline.com/']
+  config.action_cable.disable_request_forgery_protection = true
 
 
 
