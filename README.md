@@ -10,3 +10,10 @@ $ rails db:migrate
 $ rails db:seed
 
 $ rails s
+
+
+Resetear la base de datos
+
+heroku pg:reset DATABASE
+heroku run rails db:migrate
+heroku run rails db:seed

@@ -963,6 +963,7 @@ li .span-icon{
 }
 footer p{
   color: #fff;
+  margin-bottom: 0;
 }
 /* FAQ card */
 .faq-card {
@@ -2009,9 +2010,9 @@ footer p{
   position: relative;
   width: 100%;
   padding-bottom: 100px;
-  padding-top: 70px;
+  padding-top: 0px;
   background: image-url("paciente.jpg") bottom right no-repeat transparent; 
-  height: 554px;
+  height: 650px;
 }
 .doctor{
   position: relative;
@@ -2041,7 +2042,6 @@ footer p{
   padding-bottom: 100px;
   padding-top: 50px;
   background-color: #fff;
-  min-height: 818px; 
 }
 .bottom-historial img{
   max-width: 70px;
@@ -2453,7 +2453,7 @@ p.doctor-text-chat:after {
 }
 
 .state-doct .bg-white{
-  min-height: 350px;
+  min-height: 380px;
   max-width: 340px;
   margin: 0 auto;
 }
@@ -3179,6 +3179,17 @@ a.btn.btn-default {
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .historial,
+  .perfil,
+  .paciente,
+  .doctor,
+  .conv-paciente,
+  .conv-doctor{
+    height: 574px;
+  }
+  .paciente{
+    padding-top: 70px;
+  }
   .conv-doctor .panel{
     height: auto;
   }
@@ -3203,7 +3214,7 @@ a.btn.btn-default {
     padding: 15px;
   }
   #message_content{
-    height: 100px;
+    height: 89px;
   }
   .bg-white{
     min-height: 430px;
@@ -3333,9 +3344,6 @@ a.btn.btn-default {
   .service-card h6{
     height: 24px;
   }
-  .perfil{
-    height: 554px;
-  }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -3361,8 +3369,13 @@ a.btn.btn-default {
   .text-ter {
     width: 990px;
   }
-  .paciente{
-    height: 816px;
+  .historial,
+  .perfil,
+  .paciente,
+  .doctor,
+  .conv-paciente,
+  .conv-doctor{
+    height: 856px;
   }
   .paciente .btn-primary, .doctor .btn-primary {
     font-size: 3rem;
@@ -3383,7 +3396,7 @@ a.btn.btn-default {
     padding: 0px 30px;
   }
   .desktop-navigation li.log-out a {
-    top: 25px;
+    /*top: 25px;*/
   }
   .perfil{
     padding-bottom: 100px;
