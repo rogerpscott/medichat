@@ -17,7 +17,7 @@ class ConversationsController < ApplicationController
   def create
     open_conversation = Conversation.find_by(patient: current_user, status: "open")
     available_doctors = Doctor.joins(:doctor_profile).where(doctor_profiles: {available: true})
-    if available_doctors == []
+    if available_doctors == [] || available_doctors.map { |d| d.conversations.where(status: "open").length }.all? { |n| n >= 3}
       redirect_to root_path, alert: "En este momento no hay doctores disponibles, por favor intenta de nuevo en unos minutos."
     elsif open_conversation.nil? || open_conversation.doctor.doctor_profile.available == false
       @conversation = Conversation.new()
