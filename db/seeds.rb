@@ -18,6 +18,6 @@ dp1 = DoctorProfile.create(doctor: d1, available: false, last_name: "Uno", cmp: 
 dp2 = DoctorProfile.create(doctor: d2, available: false, last_name: "Dos", cmp: "029398")
 dp3 = DoctorProfile.create(doctor: d3, available: false, last_name: "Tres", cmp: "029399")
 
-pp1 = PatientProfile.create(patient: p1, first_name: "Paciente 1", last_name:"McBobby", dni: "123456789", phone: "5534274364", sex:"Masculino", age: 23, blood_type: "O+", existing_conditions: "Siempre me ha dolido mucho la espalda", allergies: "nueces", height: "170", weight: "65")
-pp2 = PatientProfile.create(patient: p2, first_name: "Paciente 2", last_name:"McJohnson", dni: "123456789", phone: "5534274364", sex:"Masculino", age: 45, blood_type: "A-", existing_conditions: "Fumo bastante y tengo problemas de asma", allergies: "leche y polen", height: "170", weight: "65")
-pp3 = PatientProfile.create(patient: p3, first_name: "Paciente 3", last_name:"McJohnson", dni: "123456789", phone: "5534274364", sex:"Femenino", age: 45, blood_type: "A+", existing_conditions: "ninguna", allergies: "ninguna", height: "170", weight: "65")
+pp1 = PatientProfile.create(patient: p1, first_name: "Paciente 1", last_name:"McBobby", dni: "123456789", phone: "5534274364", sex:"Masculino", birthday: "1980-12-12", blood_type: "O+", existing_conditions: "Siempre me ha dolido mucho la espalda", allergies: "nueces", height: "170", weight: "65")
+pp2 = PatientProfile.create(patient: p2, first_name: "Paciente 2", last_name:"McJohnson", dni: "123456789", phone: "5534274364", sex:"Masculino", birthday: "1980-12-12", blood_type: "A-", existing_conditions: "Fumo bastante y tengo problemas de asma", allergies: "leche y polen", height: "170", weight: "65")
+pp3 = PatientProfile.create(patient: p3, first_name: "Paciente 3", last_name:"McJohnson", dni: "123456789", phone: "5534274364", sex:"Femenino", birthday: "1980-12-12", blood_type: "A+", existing_conditions: "ninguna", allergies: "ninguna", height: "170", weight: "65")

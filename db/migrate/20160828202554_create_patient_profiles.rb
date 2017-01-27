@@ -6,7 +6,7 @@ class CreatePatientProfiles < ActiveRecord::Migration[5.0]
       t.string :last_name
       t.string :dni
       t.string :phone
-      t.integer :age
+      t.date :birthday
       t.string :sex
       t.string :blood_type
       t.text :existing_conditions

@@ -21,6 +21,6 @@ class PatientProfilesController < ApplicationController
   private
 
   def patient_profile_params
-    params.require(:patient_profile).permit(:first_name, :last_name, :dni, :phone, :age, :sex, :blood_type, :existing_conditions, :allergies, :height, :weight, :terms)
+    params.require(:patient_profile).permit(:first_name, :last_name, :dni, :phone, :birthday, :sex, :blood_type, :existing_conditions, :allergies, :height, :weight, :terms)
   end
 end

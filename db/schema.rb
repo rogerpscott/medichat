@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20160907233445) do
     t.string   "last_name"
     t.string   "dni"
     t.string   "phone"
-    t.integer  "age"
+    t.date     "birthday"
     t.string   "sex"
     t.string   "blood_type"
     t.text     "existing_conditions"
