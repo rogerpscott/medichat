@@ -1,23 +1,24 @@
-<div class="container diagnostico">
-  <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
-      <div id="background-form">
-        <h2>¿Cuál fue su diagnóstico?</h2>
+<div class="diagnostico">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
+        <div id="background-form">
+          <h2>¿Cuál fue su diagnóstico?</h2>
 
-        <%= simple_form_for(@conversation, html: { novalidate: false }) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :diagnosis, label: :Diagnóstico, required: true, autofocus: true, pattern: :"[a-zA-Z0-9]{3,}" %>
-          <%= f.input :summary, label: "Indicaciones para el paciente", required: true, pattern: :"[a-zA-Z0-9]{3,}" %>
+          <%= simple_form_for(@conversation, html: { novalidate: false }) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :diagnosis, label: :Diagnóstico, required: true, autofocus: true, pattern: :"[a-zA-Z0-9]{3,}" %>
+            <%= f.input :summary, label: "Indicaciones para el paciente", required: true, pattern: :"[a-zA-Z0-9]{3,}" %>
+          </div>
+
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Terminar", {class: "btn btn-danger"} %>
+          </div>
+          <% end %>
+
         </div>
-
-        <div class="form-actions text-center">
-          <%= f.button :submit, "Terminar", {class: "btn btn-danger"} %>
-        </div>
-        <% end %>
-
       </div>
     </div>
   </div>
 </div>
-
 <%= render partial: 'pages/footer' %>
