@@ -2007,6 +2007,18 @@ footer p{
 .desktop-navigation li.log-out a:before{
   background-color: #465A64;
 }
+.cnt-term{
+  padding: 20px;
+}
+.cnt-term h1,
+.cnt-term h2,
+.cnt-term h3,{
+  color:#4EB5AB;
+  font-size: 2.6rem;
+}
+.cnt-term p{
+  text-align: justify;
+}
 .paciente{
   position: relative;
   width: 100%;
@@ -3204,6 +3216,9 @@ a.btn.btn-default {
   .paciente{
     padding-top: 70px;
   }
+  .cnt-term{
+    min-height: 574px;
+  }
   .conv-doctor .panel{
     height: auto;
   }
@@ -3396,6 +3411,9 @@ a.btn.btn-default {
   }
   .paciente .btn-primary, .doctor .btn-primary {
     font-size: 3rem;
+  }
+  .cnt-term{
+    min-height: 856px;
   }
   .navbar-wagon-brand img {
     width: 200px;
