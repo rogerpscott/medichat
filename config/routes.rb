@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
+
   get 'patient_profiles/update'
 
   devise_for :users, path_names: {

@@ -12,6 +12,7 @@ permit_params :access_token, :doctor, :patient, :messages
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  actions :all, except: [:new, :create, :edit, :update, :destroy]
 
   controller do
     def find_resource
@@ -26,5 +27,6 @@ permit_params :access_token, :doctor, :patient, :messages
   show do
     render partial: 'messages/message', collection: conversation.messages
   end
+
 
 end
