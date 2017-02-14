@@ -24,9 +24,32 @@ permit_params :access_token, :doctor, :patient, :messages
     end
   end
 
+  index do
+    id_column
+    column "Nombre del paciente" do |c|
+      c.patient.patient_profile.first_name
+    end
+    column "Apellido del paciente" do |c|
+      c.patient.patient_profile.last_name
+    end
+    column "Doctor" do |c|
+      c.doctor.doctor_profile.last_name
+    end
+    column :status
+    column :summary
+    column :diagnosis
+    column :created_at
+    column :updated_at
+    actions
+  end
+
   show do
     render partial: 'messages/message', collection: conversation.messages
   end
+
+filter :status, as: :select, collection: [['Abiertas', 'open'], ['Terminadas', 'closed']]
+filter :doctor, as: :select
+
 
 
 end
