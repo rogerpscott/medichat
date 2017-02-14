@@ -1,4 +1,4 @@
 <div class="item-conversarcion">
 	<span class="icon-status"> </span>
-	<%= link_to conversation.patient.patient_profile.first_name, doctor_conversation_path(conversation), target: "_blank", class: "list-group-item list-group-item-action link-conversacion" %>
+	<%= link_to conversation.patient.patient_profile.first_name, doctor_conversation_path(conversation), target: conversation.access_token, class: "list-group-item list-group-item-action link-conversacion" %>
 </div>

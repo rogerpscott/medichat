@@ -448,7 +448,7 @@ sub {
   width: 100%;
   padding-bottom: 15px;
   padding-top: 15px;
-  background: image-url("background_home.jpg") center center no-repeat transparent; 
+  background: image-url("background_home.jpg") center center no-repeat transparent;
 }
 .home__title {
   display: table;
@@ -475,13 +475,13 @@ sub {
   display: inline-block;
   font-size: 2rem;
   color: #fff;
-  margin: 15px 0 5px 0; 
+  margin: 15px 0 5px 0;
 }
 p.text-m{
   font-size: 2rem;
 }
 .text-p{
-  
+
 }
 .form-horizontal .radio, .form-horizontal .checkbox{
   margin-left: 14px;
@@ -2024,7 +2024,7 @@ footer p{
   width: 100%;
   padding-bottom: 100px;
   padding-top: 0px;
-  background: image-url("paciente.jpg") bottom right no-repeat transparent; 
+  background: image-url("paciente.jpg") bottom right no-repeat transparent;
   height: 650px;
 }
 .doctor{
@@ -2188,9 +2188,9 @@ input[type="text"], textarea{
   font-weight: bold;
   text-align: center;
 }
-.paciente .btn-primary:focus, 
+.paciente .btn-primary:focus,
 .paciente .btn-primary:active
-.doctor .btn-primary:focus, 
+.doctor .btn-primary:focus,
 .doctor .btn-primary:active
 {
   color: #4EB5AB;
@@ -2210,7 +2210,7 @@ input[type="text"], textarea{
   padding: 0;
 }
 .form-bottom .fchat2{
-  float: left;  
+  float: left;
 }
 .form-message {
   margin: 5px 0 0;
@@ -2329,7 +2329,7 @@ p.doctor-text-chat:after {
 }
 .text-cont{
   border-top: 1px solid #fff;
-  padding-top: 10px; 
+  padding-top: 10px;
 }
 .text-cont p{
   text-align: justify;
@@ -2491,6 +2491,9 @@ p.doctor-text-chat:after {
   border-radius: 6px;
   font-size: 1.9rem;
   padding: 8px 15px;
+}
+label {
+  color: black;
 }
 /*----------------------------------------
 [Master Stylesheet]
@@ -3059,7 +3062,7 @@ p a:hover {
 }
 
 .section h2{
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .box-register{
@@ -3118,7 +3121,7 @@ a.btn.btn-default {
   margin-bottom: 0;
 }
 .conv-paciente .panel{
-  height: 327px; 
+  height: 327px;
 }
 .top-chat-d{
   height: 78px;
@@ -3189,9 +3192,9 @@ a.btn.btn-default {
   }
   .form-bottom .fchat1{
     width: 410px;
-  }             
+  }
   .form-bottom .fchat2{
- 
+
   }
   .form-message {
 
@@ -3223,7 +3226,7 @@ a.btn.btn-default {
     height: auto;
   }
   .conv-paciente .panel{
-    height: auto; 
+    height: auto;
   }
   .status-conversation{
     height: auto;
@@ -3239,7 +3242,7 @@ a.btn.btn-default {
     width: 75%;
   }
   .form-bottom .fchat2{
-     
+
   }
   .form-message {
     margin: 5px 0 0;

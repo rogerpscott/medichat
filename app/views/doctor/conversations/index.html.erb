@@ -93,8 +93,8 @@ function loopNotifications(array){
           };
         });
         notification.onclick = function(event) {
-          parent.focus();
-          window.open('/doctor/conversations/' + abc, '/doctor/conversations/' + abc);
+          var wi = window.open('/doctor/conversations/' + abc, abc);
+          wi.focus();
           this.close();
         }
       });
