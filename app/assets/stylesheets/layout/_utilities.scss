@@ -634,20 +634,27 @@ input.btn.btn-default {
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 li {
-    color: #3F5760;
-    font-size: 1.9rem;
-    line-height: 3.4rem;
-    font-weight: 400;
-    list-style: none;
+  color: #3F5760;
+  font-size: 1.9rem;
+  line-height: 3.4rem;
+  font-weight: 400;
+  list-style: none;
 }
-li .span-icon{
-    margin: 0 10px 0 -20px;
-    background-color: #fff;
-    color: #4EB5AB;
-    font-size: 2rem;
-    font-weight: normal;
-    vertical-align: middle;
+li > div.span-icon{
+  margin: 0 10px 0 -20px;
+  background-color: #fff;
+  color: #4EB5AB;
+  font-size: 2rem;
+  font-weight: normal;
+  vertical-align: middle;
+  float: left;
 }
+li > div.cnt-list {
+  float: left;
+  width: 253px;
+}
+
+
 /*==============================
   Sliders(owl-carousel)
 ==============================*/
@@ -719,7 +726,7 @@ li .span-icon{
 /* Service card */
 .service-card {
   margin: 15px auto;
-  width: 320px;
+  width: 260px;
 }
 .service-card .box{
   max-width: 220px;
@@ -3104,12 +3111,17 @@ p a:hover {
     margin: 5px auto 0;
 }
 a.btn.btn-default {
-    background-color: #4EB5AB;
-    border-color: #4EB5AB;
-    border-radius: 15px;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px 15px;
+  background-color: #4EB5AB;
+  border-color: #4EB5AB;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 15px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 236px;
 }
 .closeT{
   position: absolute;
@@ -3204,6 +3216,12 @@ a.btn.btn-default {
   }
   #message_content{
     height: 45px;
+  }
+  li > div.cnt-list {
+    width: 484px;
+  }
+  a.btn.btn-default {
+    width: auto;
   }
 }
 /* Small devices (tablets, 768px and up) */
@@ -3339,6 +3357,9 @@ a.btn.btn-default {
   .panel-body{
     height: 396px;
     margin-bottom: 10px;
+  }
+  li > div.cnt-list {
+    width: auto;
   }
 }
 
