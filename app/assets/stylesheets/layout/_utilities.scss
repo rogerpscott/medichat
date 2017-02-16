@@ -3139,9 +3139,8 @@ a.btn.btn-default {
   height: 78px;
   overflow-y: auto;
 }
-.status-conversation{
+.status-conversation .conv-child{
   height: 299px;
-  display: none;
 }
 .btns-t a {
   font-size: 12px;
@@ -3153,7 +3152,7 @@ a.btn.btn-default {
 
 /* @media (min-width: 320px) is default*/
 @media (min-width: 480px) {
-  .status-conversation{
+  .status-conversation .conv-child{
     height: 236px;
   }
   .wt{
@@ -3247,7 +3246,7 @@ a.btn.btn-default {
   .conv-paciente .panel{
     height: auto;
   }
-  .status-conversation{
+  .status-conversation .conv-child{
     height: auto;
   }
   .top-chat-d{

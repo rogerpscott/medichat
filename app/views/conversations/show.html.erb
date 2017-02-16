@@ -35,7 +35,7 @@
           <div class="panel-body hidden" id="messages"></div>
           <%end%>
         </div>
-        <div id="conversationbox" class="status-conversation">
+        <div id="conversationboxParent" class="status-conversation">
           <%= render partial: 'conversation_status', locals: {message: @message, conversation: @conversation} %>
         </div>
       </div>
