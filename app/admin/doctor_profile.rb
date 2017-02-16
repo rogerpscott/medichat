@@ -15,4 +15,14 @@ ActiveAdmin.register DoctorProfile do
 permit_params :available, :cmp, :last_name
 actions :all, except: [:new, :create, :destroy]
 
+  index do
+    id_column
+    column "Disponible", :available
+    column "Apellido", :last_name
+    column "CMP", :cmp
+    column "Creada", :created_at
+    column "Actualizada", :updated_at
+    actions
+  end
+
 end

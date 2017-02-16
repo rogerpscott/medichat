@@ -35,11 +35,11 @@ permit_params :access_token, :doctor, :patient, :messages
     column "Doctor" do |c|
       c.doctor.doctor_profile.last_name
     end
-    column :status
-    column :summary
-    column :diagnosis
-    column :created_at
-    column :updated_at
+    column "Estatus", :status
+    column "Resumen", :summary
+    column "Diagnostico", :diagnosis
+    column "Creada", :created_at
+    column "Actualizada", :updated_at
     actions
   end
 
@@ -48,7 +48,8 @@ permit_params :access_token, :doctor, :patient, :messages
   end
 
 filter :status, as: :select, collection: [['Abiertas', 'open'], ['Terminadas', 'closed']]
-filter :doctor, as: :select
+filter :doctor , as: :select, collection: ::User.all.select {|a| a.class == Doctor }.map{|a| [a.doctor_profile.last_name, a.id] }
+
 
 
 

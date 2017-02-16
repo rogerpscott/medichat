@@ -14,4 +14,16 @@ ActiveAdmin.register PatientProfile do
 # end
 actions :all, except: [:new, :create, :edit, :update, :destroy]
 
+  index do
+    id_column
+    column "Nombre", :first_name
+    column "Apellido", :last_name
+    column "DNI", :dni
+    column "Telefono", :phone
+    column "Acepto terminos", :terms
+    column "Creada", :created_at
+    column "Actualizada", :updated_at
+    actions
+  end
+
 end
