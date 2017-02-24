@@ -2019,9 +2019,20 @@ footer p{
 }
 .cnt-term h1,
 .cnt-term h2,
-.cnt-term h3,{
+.cnt-term h3,
+.cnt-term h4,
+.cnt-term h5,
+.cnt-term h6{
   color:#4EB5AB;
-  font-size: 2.6rem;
+  font-size: 14px;
+}
+.cnt-term p a {
+  color:#4EB5AB;
+}
+.cnt-term ul.list-letters li {
+  list-style-type: lower-alpha;
+  font-size: 1.4rem;
+  line-height: 24px;
 }
 .cnt-term p{
   text-align: justify;

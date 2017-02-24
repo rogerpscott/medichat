@@ -11,23 +11,23 @@
               <div class="col-md-6 box-register">
                 <div class="bg-white">
                   <div><h2>Registro</h2></div>
-                  <%= f.input :first_name, label: false, required: false, autofocus: true, placeholder: "Nombre" %>
-                  <%= f.input :last_name, label: false, required: false, placeholder: "Apellido" %>
-                  <%= f.input :dni, label: false, required: false, placeholder: "DNI" %>
-                  <%= f.input :phone, label: false, required: false, placeholder: "Teléfono" %>
-                  <!--% = f.input :email, label: false, required: false, placeholder: "Correo" %-->
-                  <%= f.input :birthday, label: false, required: false, placeholder: "Fecha de Nacimiento", use_month_numbers: true %>
+                  <%= f.input :first_name, label: "Nombre", required: false, autofocus: true, placeholder: "Nombre" %>
+                  <%= f.input :last_name, label: "Apellido", required: false, placeholder: "Apellido" %>
+                  <%= f.input :dni, label: "DNI", required: false, placeholder: "DNI" %>
+                  <%= f.input :phone, label: "Teléfono", required: false, placeholder: "Teléfono" %>
+                  <!--% = f.input :email, label: "Correo, required: false, placeholder: "Correo" %-->
+                  <%= f.input :birthday, label: "Fecha de Nacimiento", required: false, placeholder: "Fecha de Nacimiento", use_month_numbers: true %>
                 </div>
 
               </div>
               <div class="col-md-6 box-register">
                 <div class="bg-white">
-                  <%= f.input :sex, collection: PatientProfile::SEX, label: false, required: false, placeholder: "Sexo" %>
-                  <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: false, required: false,placeholder: "Tipo de sangre" %>
-                  <%= f.input :height, label: false, required: false, placeholder: "Talla" %>
-                  <%= f.input :weight, label: false, required: false, placeholder: "Peso" %>
-                  <%= f.input :existing_conditions, label: false, required: false, placeholder: "Enfermedades preexistentes" %>
-                  <%= f.input :allergies, label: false, required: false, placeholder: "Alergias" %>
+                  <%= f.input :sex, collection: PatientProfile::SEX, label: "Sexo", required: false, placeholder: "Sexo" %>
+                  <%= f.input :blood_type, collection: PatientProfile::BLOODTYPES, label: "Tipo de sangre", required: false,placeholder: "Tipo de sangre" %>
+                  <%= f.input :height, label: "Talla", required: false, placeholder: "Talla" %>
+                  <%= f.input :weight, label: "Peso", required: false, placeholder: "Peso" %>
+                  <%= f.input :existing_conditions, label: "Enfermedades preexistentes", required: false, placeholder: "Enfermedades preexistentes" %>
+                  <%= f.input :allergies, label: "Alergias", required: false, placeholder: "Alergias" %>
                   <div class="form-actions text-center" >
                     <%= f.button :submit, "Actualizar" %>
                   </div>
