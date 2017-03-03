@@ -15,7 +15,7 @@ $ rails s
 
 Resetear la base de datos
 
-heroku pg:reset DATABASE
+heroku pg:reset DATABASE --confirm medichat-peru2
 heroku run rails db:migrate
 heroku run rails db:seed
 
