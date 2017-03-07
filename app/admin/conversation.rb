@@ -48,9 +48,5 @@ permit_params :access_token, :doctor, :patient, :messages
   end
 
 filter :status, as: :select, collection: [['Abiertas', 'open'], ['Terminadas', 'closed']]
-filter :doctor , as: :select, collection: ::User.all.select {|a| a.class == Doctor }.map{|a| [a.doctor_profile.last_name, a.id] }
-
-
-
 
 end
