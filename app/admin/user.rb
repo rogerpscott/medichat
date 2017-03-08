@@ -29,7 +29,7 @@ filter :id, as: :select, collection: [['1', '8'], ['2', '9'], ['3', '10']]
     f.inputs "Edit" do
       f.input :email
       f.input :password
-      # etc
+      f.submit
     end
   end
 
