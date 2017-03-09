@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Doctor do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,7 +13,6 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-
 permit_params :email, :password
 actions :all, except: [:new, :create, :destroy]
 
@@ -23,7 +22,7 @@ actions :all, except: [:new, :create, :destroy]
     actions
   end
 
-filter :id, as: :select, collection: [['1', '8'], ['2', '9'], ['3', '10']]
+filter :email
 
   form do |f|
     f.inputs "Edit" do

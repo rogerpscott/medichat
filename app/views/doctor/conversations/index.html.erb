@@ -1,57 +1,61 @@
 <div class="slightly-padded doctor">
   <div class="container">
     <div class="row">
-      <% if current_user.doctor_profile.available == false %>
-        <div class="col-md-12 text-center unavailable">
-          <p class="wt">Estás actualmente en modo <strong>'No Disponible'</strong> entonces no puedes recibir chats. Para recibir chats, cambia a modo <strong>Disponible</strong></p>
-          <%= link_to 'Cambiar a Disponible', doctor_make_available_path, method: "post", class: 'btn btn-primary'%>
-        </div>
+      <% if current_user.admin == true %>
+        <%= link_to 'Ir a admin', admin_conversations_path, class: 'btn btn-primary' %>
       <% else %>
-        <div class="col-md-12 text-center unavailable">
-          <p class="wt">Estás actualmente en modo <strong>'Disponible'</strong>. Para dejar de recibir nuevos chats, cambia a modo <strong>'No Disponible'</strong>.</p>
-          <%= link_to 'Cambiar a No Disponible', doctor_make_unavailable_path, method: "post", class: 'btn btn-primary' %>
+        <% if current_user.doctor_profile.available == false %>
+          <div class="col-md-12 text-center unavailable">
+            <p class="wt">Estás actualmente en modo <strong>'No Disponible'</strong> entonces no puedes recibir chats. Para recibir chats, cambia a modo <strong>Disponible</strong></p>
+            <%= link_to 'Cambiar a Disponible', doctor_make_available_path, method: "post", class: 'btn btn-primary'%>
+          </div>
+        <% else %>
+          <div class="col-md-12 text-center unavailable">
+            <p class="wt">Estás actualmente en modo <strong>'Disponible'</strong>. Para dejar de recibir nuevos chats, cambia a modo <strong>'No Disponible'</strong>.</p>
+            <%= link_to 'Cambiar a No Disponible', doctor_make_unavailable_path, method: "post", class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+
+        <div class="col-sm-12 text-center" id="conversations">
+          <div id="conversation-index" class="state-doct">
+            <div class="col-sm-6">
+              <h3>Pacientes No Atendidos</h3>
+              <div class="bg-white">
+                <div class="pull-right">
+                  <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_new, remote: true, id: "refresh" %>
+                </div>
+                <div class="clearfix"></div>
+                <div class="list-group" id="tabs">
+                  <% current_user.conversations.each do |c| %>
+                    <% doc = c.messages.select { |m| m.user.class == Doctor }%>
+                    <% if doc.empty? && c.status == "open" %>
+                      <%= render "new_conversation", conversation: c %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <h3>Pacientes Atendidos</h3>
+              <div class="bg-white">
+                <div class="pull-right">
+                  <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_old, remote: true, id: "refresh2" %>
+                </div>
+                <div class="clearfix"></div>
+                <div class="list-group" id="tabs2">
+                  <% current_user.conversations.each do |c| %>
+                    <% doc = c.messages.select { |m| m.user.class == Doctor }%>
+                    <% if doc.any? && c.status == "open" %>
+                      <%= render "conversation", conversation: c %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
         </div>
       <% end %>
-
-      <div class="col-sm-12 text-center" id="conversations">
-        <div id="conversation-index" class="state-doct">
-          <div class="col-sm-6">
-            <h3>Pacientes No Atendidos</h3>
-            <div class="bg-white">
-              <div class="pull-right">
-                <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_new, remote: true, id: "refresh" %>
-              </div>
-              <div class="clearfix"></div>
-              <div class="list-group" id="tabs">
-                <% current_user.conversations.each do |c| %>
-                  <% doc = c.messages.select { |m| m.user.class == Doctor }%>
-                  <% if doc.empty? && c.status == "open" %>
-                    <%= render "new_conversation", conversation: c %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <h3>Pacientes Atendidos</h3>
-            <div class="bg-white">
-              <div class="pull-right">
-                <%= link_to '<i class="fa fa-refresh" aria-hidden="true"></i>'.html_safe, index_old, remote: true, id: "refresh2" %>
-              </div>
-              <div class="clearfix"></div>
-              <div class="list-group" id="tabs2">
-                <% current_user.conversations.each do |c| %>
-                  <% doc = c.messages.select { |m| m.user.class == Doctor }%>
-                  <% if doc.any? && c.status == "open" %>
-                    <%= render "conversation", conversation: c %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

@@ -25,4 +25,8 @@ actions :all, except: [:new, :create, :destroy]
     actions
   end
 
+  filter :available
+  filter :last_name
+  filter :cmp
+
 end
