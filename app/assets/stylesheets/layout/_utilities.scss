@@ -2223,25 +2223,23 @@ input[type="text"], textarea{
   margin: 10px 0 0 0;
   position: absolute;
   bottom: 0px;
+  left: 0;
+  width: 100%;
   z-index: 1;
 }
 .form-bottom .fchat1{
-  float: left;
-  width: 169px;
+  width: 100%;
   padding: 0;
-}
-.form-bottom .fchat2{
-  float: left;
 }
 .form-message {
   margin: 5px 0 0;
   background-color: #ADBCC5;
-  padding: 15px;
+  padding: 5px 15px 10px;
   color: #3F5760;
 }
 .panel-body{
-  padding: 15px 0 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
-  height: 237px;
+  padding: 15px 0 0;
+  height: 220px;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 45px;
@@ -2313,8 +2311,8 @@ p.doctor-text-chat:after {
   right: 0px;
 }
 .send-message{
-  margin: 15px 0;
-  padding: 15px 0;
+  margin: 0;
+  padding: 0 0 5px;
   text-align: center;
 }
 .send-message .btn{
@@ -2325,6 +2323,11 @@ p.doctor-text-chat:after {
   border-color: #465A64;
   font-size: 1.5rem;
 }
+.send-message a {
+  display: inline-block;
+  padding-right: 5px;
+}
+
 .send-message img {
   padding: 0;
   margin: 0;
@@ -3150,7 +3153,7 @@ a.btn.btn-default {
   margin-bottom: 0;
 }
 .conv-paciente .panel{
-  height: 327px;
+  height: 355px;
 }
 .top-chat-d{
   height: 78px;
@@ -3220,18 +3223,6 @@ a.btn.btn-default {
   .article-card-gray p{
     font-size: 1.8rem;
   }
-  .form-bottom{
-
-  }
-  .form-bottom .fchat1{
-    width: 410px;
-  }
-  .form-bottom .fchat2{
-
-  }
-  .form-message {
-
-  }
   .panel-body{
     height: 154px;
   }
@@ -3243,6 +3234,20 @@ a.btn.btn-default {
   }
   a.btn.btn-default {
     width: auto;
+  }
+  .send-message{
+    margin: 15px 0;
+    padding: 15px 0;
+  }
+  .form-bottom .fchat1{
+    float: left;
+    width: 410px;
+  }
+  .form-bottom .fchat2{
+    float: left;
+  }
+  .form-message {
+    padding: 15px;
   }
 }
 /* Small devices (tablets, 768px and up) */
@@ -3279,13 +3284,6 @@ a.btn.btn-default {
   }
   .form-bottom .fchat1{
     width: 75%;
-  }
-  .form-bottom .fchat2{
-
-  }
-  .form-message {
-    margin: 5px 0 0;
-    padding: 15px;
   }
   #message_content{
     height: 89px;
